@@ -170,6 +170,7 @@ url("https://github.com/DotUp-Chile/Sastreria_isi/blob/main/hero.jpeg?raw=true")
 background-size:cover;
 background-position:center;
 
+animation: heroZoom 12s ease-out forwards;
 
 }
 
@@ -186,6 +187,18 @@ margin:1.5rem 0;
 font-size:1.2rem;
 
 color:#d1d1d1;
+
+}
+
+@keyframes heroZoom {
+
+0%{
+background-size:110%;
+}
+
+100%{
+background-size:100%;
+}
 
 }
 
@@ -614,6 +627,7 @@ Providencia, Santiago, Chile
 © 2026 Sastrería Ibarra
 
 </footer>
+
 <a href="https://wa.me/56987162400" class="whatsapp-btn" target="_blank">
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
