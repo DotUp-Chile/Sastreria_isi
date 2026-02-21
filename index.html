@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sastrería Ibarra | Especialistas en Trajes a Medida en Santiago</title>
+
+<meta name="description" content="Especialistas en trajes a medida y ajuste perfecto en Santiago. Más de 20 años de experiencia en alta sastrería para novios, ejecutivos y eventos.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   VARIABLES PROFESIONALES
+========================= */
+
+:root{
+
+--color-dark:#181818;
+--color-dark-2:#101010;
+
+--color-gold:#c9a96e;
+--color-gold-soft:#e5d2a3;
+
+--color-light:#f4f1ea;
+--color-white:#ffffff;
+
+--color-gray:#9a9a9a;
+
+--container:1200px;
+
+}
+
+/* =========================
+RESET PROFESIONAL
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--color-dark);
+color:var(--color-white);
+}
+
+/* =========================
+TIPOGRAFÍA
+========================= */
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+font-weight:600;
+}
+
+h1{
+font-size:clamp(2.5rem,5vw,4rem);
+}
+
+h2{
+font-size:clamp(2rem,4vw,2.8rem);
+margin-bottom:2rem;
+}
+
+p{
+line-height:1.7;
+color:var(--color-gray);
+}
+
+/* =========================
+CONTAINER
+========================= */
+
+.container{
+max-width:var(--container);
+margin:auto;
+padding:0 2rem;
+}
+
+/* =========================
+HEADER
+========================= */
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(255,255,255,0.05);
+
+}
+
+.nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+height:70px;
+
+}
+
+.logo{
+
+font-size:1.6rem;
+color:var(--color-gold);
+
+}
+
+.nav-links{
+
+display:flex;
+gap:2rem;
+
+list-style:none;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+color:white;
+font-size:0.95rem;
+
+opacity:0.85;
+
+}
+
+.nav-links a:hover{
+
+color:var(--color-gold);
+
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.65)),
+url("https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1974&auto=format&fit=crop");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.hero-content{
+
+max-width:800px;
+
+}
+
+.hero p{
+
+margin:1.5rem 0;
+
+font-size:1.2rem;
+
+color:#d1d1d1;
+
+}
+
+/* =========================
+BOTÓN
+========================= */
+
+.btn{
+
+display:inline-block;
+
+background:var(--color-gold);
+
+color:black;
+
+padding:14px 32px;
+
+text-decoration:none;
+
+font-weight:600;
+
+letter-spacing:0.5px;
+
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+background:var(--color-gold-soft);
+
+}
+
+/* =========================
+SECCIONES
+========================= */
+
+section{
+
+padding:100px 0;
+
+}
+
+.section-dark{
+
+background:var(--color-dark);
+
+}
+
+.section-dark-2{
+
+background:var(--color-dark-2);
+
+}
+
+.section-light{
+
+background:var(--color-light);
+
+color:black;
+
+}
+
+.section-light p{
+
+color:#444;
+
+}
+
+/* =========================
+SERVICIOS
+========================= */
+
+.grid{
+
+display:grid;
+gap:40px;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+}
+
+.card img{
+
+width:100%;
+height:260px;
+object-fit:cover;
+
+margin-bottom:1rem;
+
+}
+
+.card h3{
+
+margin-bottom:0.5rem;
+
+}
+
+/* =========================
+PROCESO
+========================= */
+
+.process-grid{
+
+display:grid;
+gap:40px;
+
+grid-template-columns:
+repeat(auto-fit,minmax(200px,1fr));
+
+text-align:center;
+
+}
+
+.process-number{
+
+font-size:2.5rem;
+
+color:var(--color-gold);
+
+margin-bottom:10px;
+
+}
+
+/* =========================
+GALERÍA
+========================= */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:15px;
+
+}
+
+.gallery img{
+
+width:100%;
+height:350px;
+object-fit:cover;
+
+}
+
+/* =========================
+CONTACTO
+========================= */
+
+.contact{
+
+text-align:center;
+
+}
+
+.contact strong{
+
+color:var(--color-gold);
+
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+padding:40px 0;
+
+background:black;
+
+text-align:center;
+
+color:#777;
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.nav-links{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container nav">
+
+<div class="logo">
+Sastrería Ibarra
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#servicios">Servicios</a></li>
+
+<li><a href="#proceso">Proceso</a></li>
+
+<li><a href="#galeria">Galería</a></li>
+
+<li><a href="#contacto">Contacto</a></li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Ajuste Perfecto. Elegancia a Medida.
+</h1>
+
+<p>
+Especialistas en confección y ajuste de trajes a medida en Santiago. Más de 20 años perfeccionando cada detalle.
+</p>
+
+<a href="#contacto" class="btn">
+Agendar cita
+</a>
+
+</div>
+
+</section>
+
+
+<section id="servicios" class="section-dark">
+
+<div class="container">
+
+<h2>Servicios</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=1974">
+
+<h3>Trajes a Medida</h3>
+
+<p>Confección personalizada con ajuste exacto al cuerpo.</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1974">
+
+<h3>Ajustes y Hanchura</h3>
+
+<p>Especialistas en mejorar el calce y ajuste de cualquier traje.</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=1974">
+
+<h3>Trajes de Novio</h3>
+
+<p>Elegancia perfecta para uno de los días más importantes.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="proceso" class="section-light">
+
+<div class="container">
+
+<h2>Nuestro Proceso</h2>
+
+<div class="process-grid">
+
+<div>
+
+<div class="process-number">01</div>
+
+<h3>Evaluación</h3>
+
+<p>Analizamos tu prenda o creamos el diseño ideal.</p>
+
+</div>
+
+<div>
+
+<div class="process-number">02</div>
+
+<h3>Medidas</h3>
+
+<p>Toma precisa de medidas para ajuste perfecto.</p>
+
+</div>
+
+<div>
+
+<div class="process-number">03</div>
+
+<h3>Ajuste</h3>
+
+<p>Modificación experta y confección detallada.</p>
+
+</div>
+
+<div>
+
+<div class="process-number">04</div>
+
+<h3>Entrega</h3>
+
+<p>Resultado final impecable y listo para usar.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="galeria" class="section-dark-2">
+
+<div class="container">
+
+<h2>Galería</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1598808503746-f34f3b32f4b7?q=80&w=1974">
+
+<img src="https://images.unsplash.com/photo-1593032457868-3fbdc1c4e88b?q=80&w=1974">
+
+<img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?q=80&w=1974">
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contacto" class="section-light">
+
+<div class="container contact">
+
+<h2>Contacto</h2>
+
+<p>
+Agenda tu cita vía WhatsApp o teléfono.
+</p>
+
+<p>
+<strong>+56 9 8716 2400</strong>
+</p>
+
+<p>
+Providencia, Santiago, Chile
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Sastrería Ibarra
+
+</footer>
+
+
+</body>
+</html>
