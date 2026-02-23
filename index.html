@@ -5,265 +5,708 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sastrería Ibarra | Especialistas en Trajes a Medida en Santiago</title>
+
 <meta name="description" content="Especialistas en trajes a medida y ajuste perfecto en Santiago. Más de 20 años de experiencia en alta sastrería para novios, ejecutivos y eventos.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   VARIABLES PROFESIONALES
+========================= */
+
 :root{
-  --color-dark:#141414;
-  --color-dark-2:#0e0e0e;
-  --color-gold:#c9a96e;
-  --color-light:#f4f1ea;
-  --color-white:#ffffff;
-  --color-gray:#a0a0a0;
-  --container:1200px;
+--color-dark:#141414;
+--color-dark-2:#0e0e0e;
+--color-gold:#c9a96e;
+--color-gold-soft:#e5d2a3;
+--color-light:#f4f1ea;
+--color-white:#ffffff;
+--color-gray:#a0a0a0;
+--container:1200px;
 }
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+/* =========================
+RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-  font-family:'Inter',sans-serif;
-  background:var(--color-dark);
-  color:var(--color-white);
-  overflow-x:hidden;
+font-family:'Inter',sans-serif;
+background:var(--color-dark);
+color:var(--color-white);
+overflow-x:hidden;
 }
 
-/* TIPOGRAFÍA */
-h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;}
-h1{font-size:clamp(2.5rem,5vw,4rem);}
-h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:2rem;text-align:center;}
-p{line-height:1.8;color:var(--color-gray);}
+/* =========================
+TIPOGRAFÍA
+========================= */
 
-/* CONTAINER */
-.container{max-width:var(--container);margin:auto;padding:0 2rem;}
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+font-weight:600;
+letter-spacing:0.5px;
+}
 
-/* HEADER */
-header{position:fixed;top:0;width:100%;z-index:1000;background:transparent;transition:0.4s ease;}
-header.scrolled{background:rgba(0,0,0,0.85);}
-.nav{display:flex;justify-content:space-between;align-items:center;height:70px;}
-.logo{font-size:1.6rem;color:var(--color-gold);}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{text-decoration:none;color:white;font-size:0.95rem;opacity:0.85;position:relative;}
-.nav-links a::after{content:"";position:absolute;bottom:-6px;left:0;width:0%;height:1px;background:var(--color-gold);transition:0.3s;}
-.nav-links a:hover::after{width:100%;}
+h1{
+font-size:clamp(2.5rem,5vw,4rem);
+}
 
-/* HERO */
+h2{
+font-size:clamp(2rem,4vw,2.8rem);
+margin-bottom:2rem;
+text-align:center;
+}
+
+p{
+line-height:1.8;
+color:var(--color-gray);
+}
+
+/* =========================
+CONTAINER
+========================= */
+
+.container{
+max-width:var(--container);
+margin:auto;
+padding:0 2rem;
+}
+
+/* =========================
+HEADER PREMIUM
+========================= */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:transparent;
+transition:0.4s ease;
+}
+
+header.scrolled{
+background:rgba(0,0,0,0.85);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+height:70px;
+}
+
+.logo{
+font-size:1.6rem;
+color:var(--color-gold);
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:0.95rem;
+opacity:0.85;
+position:relative;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+bottom:-6px;
+left:0;
+width:0%;
+height:1px;
+background:var(--color-gold);
+transition:0.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* =========================
+HERO CINEMÁTICO
+========================= */
+
 .hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  background: url("https://github.com/DotUp-Chile/Sastreria_isi/blob/main/hero.jpeg?raw=true") center/cover no-repeat;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.8)),
+url("https://github.com/DotUp-Chile/Sastreria_isi/blob/main/hero.jpeg?raw=true");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
-.hero::before{
-  content:"";
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  background: rgba(0,0,0,0.2); /* contraste suave */
-  z-index:1;
+
+
+@keyframes heroZoom {
+0%{ background-size:110%; }
+100%{ background-size:100%; }
 }
-.hero-content{position:relative;z-index:2;max-width:800px;}
-.hero-content span{color:var(--color-gold);letter-spacing:3px;font-size:0.85rem;text-transform:uppercase;}
-.hero-content h1{margin-top:20px;}
-.hero-content p{margin:1.5rem 0;font-size:1.1rem;}
+
+.hero-content{
+max-width:800px;
+}
+
+.hero-content span{
+color:var(--color-gold);
+letter-spacing:3px;
+font-size:0.85rem;
+text-transform:uppercase;
+}
+
+.hero-content h1{
+margin-top:20px;
+}
+
+.hero-content p{
+margin:1.5rem 0;
+font-size:1.1rem;
+}
 
 /* FadeUp */
-.hero-content span,.hero-content h1,.hero-content p,.hero-content .btn{
-  opacity:0; transform:translateY(40px); animation:fadeUp 1s ease forwards;
+
+.hero-content span,
+.hero-content h1,
+.hero-content p,
+.hero-content .btn{
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1s ease forwards;
 }
-.hero-content span{animation-delay:0.3s;}
-.hero-content h1{animation-delay:0.6s;}
-.hero-content p{animation-delay:0.9s;}
-.hero-content .btn{animation-delay:1.2s;}
-@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
-/* BOTÓN */
-.btn{position:relative;display:inline-block;background:var(--color-gold);color:black;padding:14px 34px;text-decoration:none;font-weight:600;letter-spacing:1px;transition:all 0.3s ease;}
-.btn::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);transition:0.6s;}
-.btn:hover::before{left:100%;}
+.hero-content span{ animation-delay:0.3s; }
+.hero-content h1{ animation-delay:0.6s; }
+.hero-content p{ animation-delay:0.9s; }
+.hero-content .btn{ animation-delay:1.2s; }
 
-/* SECCIONES */
-section{padding:120px 0;position:relative;}
-.section-dark{ background:var(--color-dark);}
-.section-dark-2{ background:var(--color-dark-2);}
-.section-light{background:var(--color-light);color:black;}
-.section-light p{color:#444;}
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-/* CARDS */
-.grid{display:grid;gap:50px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-.card{background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);padding:20px;border:1px solid rgba(255,255,255,0.05);transition:0.4s;}
-.card img{width:100%;height:300px;object-fit:cover;margin-bottom:1rem;}
-.card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.4);border:1px solid rgba(201,169,110,0.4);}
-.card h3{margin-bottom:0.5rem;}
+/* =========================
+BOTÓN PREMIUM
+========================= */
 
-/* PROCESO */
-.process-grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));text-align:center;}
-.process-number{font-size:2.5rem;color:var(--color-gold);margin-bottom:10px;}
+.btn{
+position:relative;
+overflow:hidden;
+display:inline-block;
+background:var(--color-gold);
+color:black;
+padding:14px 34px;
+text-decoration:none;
+font-weight:600;
+letter-spacing:1px;
+transition:all 0.3s ease;
+}
 
-/* GALERÍA */
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;}
-.gallery img{width:100%;height:350px;object-fit:cover;transition:0.5s;}
-.gallery img:hover{transform:scale(1.08);}
+.btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.5),
+transparent
+);
+transition:0.6s;
+}
 
-/* CONTACTO */
-.contact{text-align:center;}
-.contact strong{color:var(--color-gold);font-size:1.2rem;}
+.btn:hover::before{
+left:100%;
+}
 
-/* FOOTER */
-footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
 
-/* WHATSAPP */
-.whatsapp-btn{position:fixed;bottom:30px;right:30px;background:#25D366;width:65px;height:65px;display:flex;align-items:center;justify-content:center;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:all 0.3s ease;z-index:999;}
-.whatsapp-btn.hidden{opacity:0;pointer-events:none;transform:translateY(20px);}
-.whatsapp-btn:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 15px 35px rgba(0,0,0,0.4);}
+/* =========================
+SECCIONES
+========================= */
 
-/* RESPONSIVE */
-@media(max-width:768px){.nav-links{display:none;}}
+section{
+padding:120px 0;
+position:relative;
+}
+section::before{
+content:"";
+position:absolute;
+top:0;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+height:1px;
+background:rgba(255,255,255,0.05);
+}
 
-/* LINEA DORADA */
-h2{position:relative;display:inline-block;padding-bottom:15px;}
-h2::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--color-gold);transition:0.6s ease;}
-section:hover h2::after{width:80px;}
+.section-dark{ background:var(--color-dark); }
+.section-dark-2{ background:var(--color-dark-2); }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(60px);transition:all 0.8s ease;}
-.reveal.active{opacity:1;transform:translateY(0);}
+.section-light{
+background:var(--color-light);
+color:black;
+}
+
+.section-light p{ color:#444; }
+
+/* =========================
+CARDS PREMIUM
+========================= */
+
+.grid{
+display:grid;
+gap:50px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.card{
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(10px);
+padding:20px;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.4s;
+}
+
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+margin-bottom:1rem;
+transition:0.5s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+border:1px solid rgba(201,169,110,0.4);
+}
+.card h3{
+margin-bottom:0.5rem;
+}
+
+/* =========================
+PROCESO
+========================= */
+
+.process-grid{
+display:grid;
+gap:40px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+text-align:center;
+}
+
+.process-number{
+font-size:2.5rem;
+color:var(--color-gold);
+margin-bottom:10px;
+}
+
+/* =========================
+GALERÍA
+========================= */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+/* =========================
+CONTACTO
+========================= */
+
+.contact{
+text-align:center;
+}
+
+.contact strong{
+color:var(--color-gold);
+font-size:1.2rem;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+padding:50px 0;
+background:black;
+text-align:center;
+color:#777;
+font-size:0.9rem;
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp-btn{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#25D366;
+width:65px;
+height:65px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transition:all 0.3s ease;
+z-index:999;
+animation:pulse 2.5s infinite;
+}
+.whatsapp-btn.hidden{
+opacity:0;
+pointer-events:none;
+transform:translateY(20px);
+}
+
+
+.whatsapp-btn:hover{
+transform:translateY(-5px) scale(1.1);
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+   
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+   
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+.nav-links{ display:none; }
+}
+/* ===== LINEA DORADA ===== */
+h2{
+position:relative;
+display:inline-block;
+padding-bottom:15px;
+}
+
+h2::after{
+content:"";
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:0;
+height:2px;
+background:var(--color-gold);
+transition:0.6s ease;
+}
+
+section:hover h2::after{
+width:80px;
+}
+/*_____________*/
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
 </style>
-</head>
-<body>
 
+</head>
+
+<body>
 <header>
+
 <div class="container nav">
-  <div class="logo">Sastrería Ibarra</div>
-  <ul class="nav-links">
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
+
+<div class="logo">
+Sastrería Ibarra
 </div>
+
+<ul class="nav-links">
+
+<li><a href="#servicios">Servicios</a></li>
+
+<li><a href="#proceso">Proceso</a></li>
+
+<li><a href="#galeria">Galería</a></li>
+
+<li><a href="#contacto">Contacto</a></li>
+
+</ul>
+
+</div>
+
 </header>
 
+
 <section class="hero" id="hero">
+
 <div class="hero-content">
-  <span>Alta Sastrería en Santiago</span>
-  <h1>Elegancia y Ajuste Perfecto a Medida</h1>
-  <p>Especialistas en confección y ajuste de trajes a medida en Santiago. Más de 20 años perfeccionando cada detalle.</p>
-  <a href="#contacto" class="btn">Agendar cita</a>
-</div>
-</section>
 
-<section id="servicios" class="section-dark reveal">
-<div class="container">
-<h2>Servicios</h2>
-<div class="grid">
-  <div class="card">
-    <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/traje-medida.jpeg?raw=true">
-    <h3>Trajes a Medida</h3>
-    <p>Confección personalizada con ajuste exacto al cuerpo.</p>
-  </div>
-  <div class="card">
-    <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/ajustes.jpeg?raw=true">
-    <h3>Ajustes y Hanchura</h3>
-    <p>Especialistas en mejorar el calce y ajuste de cualquier traje.</p>
-  </div>
-  <div class="card">
-    <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true">
-    <h3>Trajes de Novio</h3>
-    <p>Elegancia perfecta para uno de los días más importantes.</p>
-  </div>
-</div>
-</div>
-</section>
+<span class="hero-top">
+Alta Sastrería en Santiago
+</span>
 
-<section id="proceso" class="section-light reveal">
-<div class="container">
-<h2>Nuestro Proceso</h2>
-<div class="process-grid">
-  <div>
-    <div class="process-number">01</div>
-    <h3>Evaluación</h3>
-    <p>Analizamos tu prenda o creamos el diseño ideal.</p>
-  </div>
-  <div>
-    <div class="process-number">02</div>
-    <h3>Medidas</h3>
-    <p>Toma precisa de medidas para ajuste perfecto.</p>
-  </div>
-  <div>
-    <div class="process-number">03</div>
-    <h3>Ajuste</h3>
-    <p>Modificación experta y confección detallada.</p>
-  </div>
-  <div>
-    <div class="process-number">04</div>
-    <h3>Entrega</h3>
-    <p>Resultado final impecable y listo para usar.</p>
-  </div>
-</div>
-</div>
-</section>
+<h1>
+Elegancia y Ajuste Perfecto a Medida
+</h1>
 
-<section id="galeria" class="section-dark-2 reveal">
-<div class="container">
-<h2>Galería</h2>
-<div class="gallery">
-  <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true">
-  <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true">
-  <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true">
-</div>
-</div>
-</section>
 
-<section id="contacto" class="section-light reveal">
-<div class="container contact">
-<h2>Contacto</h2>
-<p>Agenda tu cita vía WhatsApp o teléfono.</p>
-<p><strong>+56 9 8716 2400</strong></p>
-<p>Providencia, Santiago, Chile</p>
-</div>
-</section>
+<p>
+Especialistas en confección y ajuste de trajes a medida en Santiago. Más de 20 años perfeccionando cada detalle.
+</p>
 
-<footer>© 2026 Sastrería Ibarra</footer>
-
-<a href="https://wa.me/569XXXXXXXX" class="whatsapp-btn hidden" target="_blank">
-<!-- SVG WhatsApp aquí -->
+<a href="#contacto" class="btn">
+Agendar cita
 </a>
 
+</div>
+
+</section>
+
+
+<section id="servicios" class="section-dark">
+
+<div class="container">
+
+<h2>Servicios</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/traje-medida.jpeg?raw=true">
+
+<h3>Trajes a Medida</h3>
+
+<p>Confección personalizada con ajuste exacto al cuerpo.</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/ajustes.jpeg?raw=true">
+
+<h3>Ajustes y Hanchura</h3>
+
+<p>Especialistas en mejorar el calce y ajuste de cualquier traje.</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true">
+
+<h3>Trajes de Novio</h3>
+
+<p>Elegancia perfecta para uno de los días más importantes.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="proceso" class="section-light">
+
+<div class="container">
+
+<h2>Nuestro Proceso</h2>
+
+<div class="process-grid">
+
+<div>
+
+<div class="process-number">01</div>
+
+<h3>Evaluación</h3>
+
+<p>Analizamos tu prenda o creamos el diseño ideal.</p>
+
+</div>
+
+<div>
+
+<div class="process-number">02</div>
+
+<h3>Medidas</h3>
+
+<p>Toma precisa de medidas para ajuste perfecto.</p>
+
+</div>
+
+<div>
+
+<div class="process-number">03</div>
+
+<h3>Ajuste</h3>
+
+<p>Modificación experta y confección detallada.</p>
+
+</div>
+
+<div>
+
+<div class="process-number">04</div>
+
+<h3>Entrega</h3>
+
+<p>Resultado final impecable y listo para usar.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="galeria" class="section-dark-2">
+
+<div class="container">
+
+<h2>Galería</h2>
+
+<div class="gallery">
+
+<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true">
+
+<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true">
+
+<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true">
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contacto" class="section-light">
+
+<div class="container contact">
+
+<h2>Contacto</h2>
+
+<p>
+Agenda tu cita vía WhatsApp o teléfono.
+</p>
+
+<p>
+<strong>+56 9 8716 2400</strong>
+</p>
+
+<p>
+Providencia, Santiago, Chile
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Sastrería Ibarra
+
+</footer>
+
+<a href="https://wa.me/569XXXXXXXX"
+   class="whatsapp-btn hidden"
+   target="_blank">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
+<path d="M16.001 3C8.82 3 3 8.821 3 16.002c0 2.823.922 5.426 2.48 7.53L3 29l5.623-2.412a12.93 12.93 0 0 0 7.378 2.314h.001c7.18 0 13-5.82 13-13S23.181 3 16.001 3zm0 23.904a10.87 10.87 0 0 1-5.54-1.51l-.397-.236-3.336 1.43.712-3.456-.258-.356a10.865 10.865 0 1 1 8.82 4.128zm5.957-8.157c-.326-.163-1.926-.951-2.225-1.06-.299-.109-.517-.163-.735.164-.217.326-.843 1.06-1.034 1.277-.19.217-.381.245-.707.082-.326-.163-1.377-.508-2.623-1.62-.969-.864-1.623-1.932-1.814-2.258-.19-.326-.02-.502.143-.665.146-.146.326-.381.49-.571.163-.19.217-.326.326-.544.109-.217.054-.408-.027-.571-.082-.163-.735-1.773-1.007-2.427-.265-.637-.535-.551-.735-.561l-.626-.011c-.217 0-.571.082-.87.408-.299.326-1.143 1.117-1.143 2.726 0 1.609 1.17 3.164 1.334 3.381.163.217 2.304 3.52 5.584 4.935.781.337 1.39.538 1.865.689.783.249 1.496.214 2.06.13.629-.094 1.926-.787 2.197-1.547.272-.76.272-1.411.19-1.547-.081-.136-.299-.217-.625-.381z"/>
+</svg>
+
+</a>
+   
 <script>
-// HEADER SCROLL
 window.addEventListener("scroll", function(){
   const header = document.querySelector("header");
   header.classList.toggle("scrolled", window.scrollY > 50);
 });
-
-// REVEAL
+</script>
+<script>
 const reveals = document.querySelectorAll(".reveal");
+
 window.addEventListener("scroll", () => {
   reveals.forEach(reveal => {
-    if(reveal.getBoundingClientRect().top < window.innerHeight - 100){
+    const windowHeight = window.innerHeight;
+    const revealTop = reveal.getBoundingClientRect().top;
+    if(revealTop < windowHeight - 100){
       reveal.classList.add("active");
     }
   });
 });
-
-// WHATSAPP SHOW
+</script>
+<script>
 const hero = document.getElementById("hero");
 const whatsappBtn = document.querySelector(".whatsapp-btn");
+
 window.addEventListener("scroll", () => {
-  if(window.scrollY > hero.offsetHeight - 50){
+  const heroHeight = hero.offsetHeight;
+
+  if(window.scrollY > heroHeight - 50){
     whatsappBtn.classList.remove("hidden");
   } else {
     whatsappBtn.classList.add("hidden");
   }
 });
 </script>
+
 
 </body>
 </html>
