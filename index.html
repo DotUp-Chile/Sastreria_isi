@@ -200,14 +200,54 @@ background-size:110%;
 background-size:100%;
 }
    
-.hero{
-background-attachment: fixed;
-}
 .hero-content{
+<div class="hero-content">
+
+<span class="hero-top">
+Alta Sastrería en Santiago
+</span>
+
+<h1 class="hero-title">
+Elegancia y Ajuste Perfecto a Medida
+</h1>
+
+<p class="hero-text">
+Especialistas en confección y hanchura profesional de trajes. Más de 20 años perfeccionando cada detalle.
+</p>
+
+<a href="#contacto" class="btn hero-btn">
+Agendar cita
+</a>
+
+</div>
+.hero-top,
+.hero-title,
+.hero-text,
+.hero-btn{
 opacity:0;
-transform:translateY(30px);
-animation:fadeUp 1.5s ease forwards;
-animation-delay:0.5s;
+transform:translateY(40px);
+}
+
+/* Animaciones escalonadas */
+
+.hero-top{
+animation:fadeUp 1.2s ease forwards;
+animation-delay:0.3s;
+}
+
+.hero-title{
+animation:fadeUp 1.2s ease forwards;
+animation-delay:0.6s;
+}
+
+.hero-text{
+animation:fadeUp 1.2s ease forwards;
+animation-delay:0.9s;
+}
+
+.hero-btn{
+animation:fadeUp 1.2s ease forwards;
+animation-delay:1.2s;
 }
 
 @keyframes fadeUp{
@@ -216,6 +256,7 @@ opacity:1;
 transform:translateY(0);
 }
 }
+
 
 }
 
@@ -478,9 +519,14 @@ Sastrería Ibarra
 
 <div class="hero-content">
 
+<span class="hero-top">
+Alta Sastrería en Santiago
+</span>
+
 <h1>
-Ajuste Perfecto. Elegancia a Medida.
+Elegancia y Ajuste Perfecto a Medida
 </h1>
+
 
 <p>
 Especialistas en confección y ajuste de trajes a medida en Santiago. Más de 20 años perfeccionando cada detalle.
