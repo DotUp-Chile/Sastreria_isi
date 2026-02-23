@@ -216,7 +216,35 @@ opacity:1;
 transform:translateY(0);
 }
 }
+/*______________*/
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--color-gold);
+  border-radius: 12px;
+}
 
+.scroll-down span {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: var(--color-gold);
+  margin: 6px auto;
+  border-radius: 50%;
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); opacity:1; }
+  50% { transform: translateY(10px); opacity:0.5; }
+  100% { transform: translateY(0); opacity:1; }
+}
+
+   
 /* =========================
 BOTÓN PREMIUM
 ========================= */
@@ -556,7 +584,10 @@ transform:translateY(0);
     <h1>Elegancia y Ajuste Perfecto a Medida</h1>
     <p>Especialistas en confección y ajuste de trajes a medida en Santiago. Más de 20 años perfeccionando cada detalle.</p>
     <a href="#contacto" class="btn">Agendar cita</a>
+      <div class="scroll-down">
+    <span></span>
   </div>
+</div>
 </section>
 
 <section id="servicios" class="section-dark">
