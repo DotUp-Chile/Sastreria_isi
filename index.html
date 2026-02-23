@@ -330,13 +330,17 @@ TESTIMONIOS
   margin-top:50px;
 }
 
-.testimonial-card{
-  background:rgba(201,169,110,0.05);
-  padding:25px;
-  border-radius:12px;
-  border:1px solid rgba(201,169,110,0.2);
-  text-align:center;
-  transition:0.4s;
+.testimonial-card {
+  background: rgba(201,169,110,0.05);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,169,110,0.2);
+  text-align: center; /* ya lo tienes, genial */
+  display: flex; /* nuevo */
+  flex-direction: column; /* que los elementos queden en columna */
+  align-items: center; /* centra todo horizontalmente */
+  justify-content: center; /* centra verticalmente dentro de la tarjeta */
+  transition: 0.4s;
 }
 
 .testimonial-card:hover{
@@ -350,18 +354,19 @@ TESTIMONIOS
   margin-bottom:15px;
 }
 
-.testimonial-info{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
+.testimonial-info {
+  display: flex;
+  flex-direction: column; /* en columna, para que la img quede encima del nombre */
+  align-items: center; /* centra horizontalmente la imagen y el nombre */
+  gap: 10px;
+  margin-bottom: 15px; /* separa del texto */
 }
 
-.testimonial-info img{
-  border-radius:50%;
-  width:120px;
-  height:120px;
-  object-fit:cover;
+.testimonial-info img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 }
 
    
