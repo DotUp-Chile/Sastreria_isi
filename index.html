@@ -175,20 +175,10 @@ animation: heroZoom 12s ease-out forwards;
 }
 
 .hero-content{
-
 max-width:800px;
-
 }
 
-.hero p{
-
-margin:1.5rem 0;
-
-font-size:1.2rem;
-
-color:#d1d1d1;
-
-}
+/* Animación zoom fondo */
 
 @keyframes heroZoom {
 
@@ -199,61 +189,37 @@ background-size:110%;
 100%{
 background-size:100%;
 }
-   
-.hero-content{
-<div class="hero-content">
 
-<span class="hero-top">
-Alta Sastrería en Santiago
-</span>
+}
 
-<h1 class="hero-title">
-Elegancia y Ajuste Perfecto a Medida
-</h1>
+/* Animación textos */
 
-<p class="hero-text">
-Especialistas en confección y hanchura profesional de trajes. Más de 20 años perfeccionando cada detalle.
-</p>
-
-<a href="#contacto" class="btn hero-btn">
-Agendar cita
-</a>
-
-</div>
-.hero-top,
-.hero-title,
-.hero-text{
+.hero-content span,
+.hero-content h1,
+.hero-content p,
+.hero-content .btn{
 opacity:0;
 transform:translateY(40px);
 }
 
-.hero-btn{
-opacity:0;
-transform:translateY(40px);
-display:inline-block;
-}
-
-
-/* Animaciones escalonadas */
-
-.hero-top{
-animation:fadeUp 1.2s ease forwards;
+.hero-content span{
+animation:fadeUp 1s ease forwards;
 animation-delay:0.3s;
 }
 
-.hero-title{
-animation:fadeUp 1.2s ease forwards;
+.hero-content h1{
+animation:fadeUp 1s ease forwards;
 animation-delay:0.6s;
 }
 
-.hero-text{
-animation:fadeUp 1.2s ease forwards;
+.hero-content p{
+animation:fadeUp 1s ease forwards;
 animation-delay:0.9s;
 }
 
-.hero-btn{
-animation:fadeUp 1.2s ease forwards;
-animation-delay:1.1s;
+.hero-content .btn{
+animation:fadeUp 1s ease forwards;
+animation-delay:1.2s;
 }
 
 @keyframes fadeUp{
@@ -261,9 +227,6 @@ to{
 opacity:1;
 transform:translateY(0);
 }
-}
-
-
 }
 
 /* =========================
