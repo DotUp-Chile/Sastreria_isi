@@ -16,7 +16,6 @@
   --color-dark:#141414;
   --color-dark-2:#0e0e0e;
   --color-gold:#c9a96e;
-  --color-gold-soft:#e5d2a3;
   --color-light:#f4f1ea;
   --color-white:#ffffff;
   --color-gray:#a0a0a0;
@@ -34,7 +33,7 @@ body{
 }
 
 /* TIPOGRAFÍA */
-h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;letter-spacing:0.5px;}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;}
 h1{font-size:clamp(2.5rem,5vw,4rem);}
 h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:2rem;text-align:center;}
 p{line-height:1.8;color:var(--color-gray);}
@@ -52,7 +51,7 @@ header.scrolled{background:rgba(0,0,0,0.85);}
 .nav-links a::after{content:"";position:absolute;bottom:-6px;left:0;width:0%;height:1px;background:var(--color-gold);transition:0.3s;}
 .nav-links a:hover::after{width:100%;}
 
-/* HERO CINEMÁTICO */
+/* HERO */
 .hero{
   height:100vh;
   display:flex;
@@ -62,29 +61,14 @@ header.scrolled{background:rgba(0,0,0,0.85);}
   position:relative;
   overflow:hidden;
   background: url("https://github.com/DotUp-Chile/Sastreria_isi/blob/main/hero.jpeg?raw=true") center/cover no-repeat;
-  transition: transform 0.5s ease, filter 0.5s ease;
 }
-
 .hero::before{
   content:"";
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.2); /* Contraste suave */
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background: rgba(0,0,0,0.2); /* contraste suave */
   z-index:1;
 }
-
-.hero.scroll-light{
-  transform: scale(1.02);
-  filter: brightness(1.15);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:800px;
-}
-
+.hero-content{position:relative;z-index:2;max-width:800px;}
 .hero-content span{color:var(--color-gold);letter-spacing:3px;font-size:0.85rem;text-transform:uppercase;}
 .hero-content h1{margin-top:20px;}
 .hero-content p{margin:1.5rem 0;font-size:1.1rem;}
@@ -99,14 +83,13 @@ header.scrolled{background:rgba(0,0,0,0.85);}
 .hero-content .btn{animation-delay:1.2s;}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
-/* BOTÓN PREMIUM */
-.btn{position:relative;overflow:hidden;display:inline-block;background:var(--color-gold);color:black;padding:14px 34px;text-decoration:none;font-weight:600;letter-spacing:1px;transition:all 0.3s ease;}
+/* BOTÓN */
+.btn{position:relative;display:inline-block;background:var(--color-gold);color:black;padding:14px 34px;text-decoration:none;font-weight:600;letter-spacing:1px;transition:all 0.3s ease;}
 .btn::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);transition:0.6s;}
 .btn:hover::before{left:100%;}
 
 /* SECCIONES */
 section{padding:120px 0;position:relative;}
-section::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:90%;height:1px;background:rgba(255,255,255,0.05);}
 .section-dark{ background:var(--color-dark);}
 .section-dark-2{ background:var(--color-dark-2);}
 .section-light{background:var(--color-light);color:black;}
@@ -115,7 +98,7 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
 /* CARDS */
 .grid{display:grid;gap:50px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
 .card{background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);padding:20px;border:1px solid rgba(255,255,255,0.05);transition:0.4s;}
-.card img{width:100%;height:300px;object-fit:cover;margin-bottom:1rem;transition:0.5s;}
+.card img{width:100%;height:300px;object-fit:cover;margin-bottom:1rem;}
 .card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.4);border:1px solid rgba(201,169,110,0.4);}
 .card h3{margin-bottom:0.5rem;}
 
@@ -136,10 +119,9 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
 footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
 
 /* WHATSAPP */
-.whatsapp-btn{position:fixed;bottom:30px;right:30px;background:#25D366;width:65px;height:65px;display:flex;align-items:center;justify-content:center;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:all 0.3s ease;z-index:999;animation:pulse 2.5s infinite;}
+.whatsapp-btn{position:fixed;bottom:30px;right:30px;background:#25D366;width:65px;height:65px;display:flex;align-items:center;justify-content:center;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:all 0.3s ease;z-index:999;}
 .whatsapp-btn.hidden{opacity:0;pointer-events:none;transform:translateY(20px);}
 .whatsapp-btn:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 15px 35px rgba(0,0,0,0.4);}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
 
 /* RESPONSIVE */
 @media(max-width:768px){.nav-links{display:none;}}
@@ -251,5 +233,37 @@ section:hover h2::after{width:80px;}
 <footer>© 2026 Sastrería Ibarra</footer>
 
 <a href="https://wa.me/569XXXXXXXX" class="whatsapp-btn hidden" target="_blank">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
-<path d="M16.001 3C8.82 3 3 8.821 3 16.002c0 2.823.922 5.426 2.48 7.53L3 29l5.623-2.412a12.93 12.93 0 0 0 7.378 2.314h.001c7.18 0 13-5.82 13-13S23.181 3 16.001 3zm0 23.904a10.87 10.87 0 0 1-5.54-1.51l-.397-.236-3.336 1.43.712-3.456-.258-.356a10.865 10.865 0 1 1 8.82 4.128zm5.957-8.157c-.326-.163-1.926-.951-2.225-1.06-.299-.109-.517-.163-.735.164-.217.326-.843 1.06-1.034 1.277-.19.217-.381.245-.707.082-.326-.163-1.377-.508-2.623-1.62-.969-.864-1.623-1.932-1.814-2.258-.19-.326-.02-.502.143-.665.
+<!-- SVG WhatsApp aquí -->
+</a>
+
+<script>
+// HEADER SCROLL
+window.addEventListener("scroll", function(){
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+// REVEAL
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach(reveal => {
+    if(reveal.getBoundingClientRect().top < window.innerHeight - 100){
+      reveal.classList.add("active");
+    }
+  });
+});
+
+// WHATSAPP SHOW
+const hero = document.getElementById("hero");
+const whatsappBtn = document.querySelector(".whatsapp-btn");
+window.addEventListener("scroll", () => {
+  if(window.scrollY > hero.offsetHeight - 50){
+    whatsappBtn.classList.remove("hidden");
+  } else {
+    whatsappBtn.classList.add("hidden");
+  }
+});
+</script>
+
+</body>
+</html>
