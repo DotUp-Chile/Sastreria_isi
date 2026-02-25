@@ -707,6 +707,25 @@ transform:translateY(0);
 .nav-links .dropdown:hover .dropdown-menu {
   display: block;
 }
+.back-arrow-header {
+  position: fixed;      /* queda fijo mientras haces scroll */
+  top: 90px;            /* justo debajo del header de 70px */
+  left: 20px;           /* margen desde la izquierda */
+  background: var(--color-gold);
+  color: black;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;        /* que esté sobre todo */
+}
+
+.back-arrow-header:hover {
+  background: var(--color-gold-soft);
+  transform: translateX(-3px);
+}
 
 </style>
 </head>
@@ -762,11 +781,9 @@ transform:translateY(0);
     </a>
   </div>
 </section>
-<section class="section-light">
-  <div class="container" style="text-align:center;">
-    <a href="index.html" class="btn">← Volver al Home</a>
-  </div>
-</section>
+<!-- Flecha de regreso al Home, cerca del header -->
+<a href="index.html" class="back-arrow-header">&larr; Home</a>
+
 
 
 <footer>© 2026 Sastrería Dot.Up</footer>
