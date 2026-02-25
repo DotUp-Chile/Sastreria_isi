@@ -718,19 +718,12 @@ transform:translateY(0);
 
  .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* espacio entre home, logo y menú */
   height: 70px;
-  position: relative;
 }
 
-/* Contenedor izquierdo */
-.nav-left {
-  display: flex;
-  align-items: center;
-}
-
-/* Botón volver al home */
+/* Botón < Home */
 .back-home {
   color: var(--color-white);
   text-decoration: none;
@@ -744,14 +737,24 @@ transform:translateY(0);
   color: var(--color-gold);
 }
 
-/* Logo sigue igual, no se mueve */
+/* Logo centrado, sin moverlo */
+.logo {
+  flex: 1;               /* ocupa espacio intermedio */
+  display: flex;
+  justify-content: center; /* centro del header */
+}
+
 .logo img {
   height: 150px;
   width: auto;
-  display: block;
 }
 
-
+/* Menú a la derecha */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
 
 </style>
 </head>
@@ -759,19 +762,17 @@ transform:translateY(0);
    
 <header>
   <div class="container nav">
-    <!-- Contenedor izquierdo para < Home -->
-    <div class="nav-left">
-      <a href="index.html" class="back-home">&lt; Home</a>
-    </div>
+    <!-- Botón < Home a la izquierda -->
+    <a href="index.html" class="back-home">&lt; Home</a>
 
-    <!-- Logo al centro/derecha -->
+    <!-- Logo centrado (o donde lo tengas) -->
     <div class="logo">
       <a href="index.html">
         <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" />
       </a>
     </div>
 
-    <!-- Menú -->
+    <!-- Menú a la derecha -->
     <ul class="nav-links">
       <li><a href="index.html#servicios">Servicios</a></li>
       <li><a href="index.html#proceso">Proceso</a></li>
@@ -780,6 +781,7 @@ transform:translateY(0);
     </ul>
   </div>
 </header>
+
 
 <section class="hero" style="height:60vh;">
   <div class="hero-overlay"></div>
