@@ -707,19 +707,27 @@ transform:translateY(0);
 .nav-links .dropdown:hover .dropdown-menu {
   display: block;
 }
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0,0,0,0.85);
+  height: 70px;
+}
+
 .nav {
   display: flex;
-  justify-content: space-between; /* logo a la izquierda, nav a la derecha */
+  justify-content: flex-end; /* logo y nav a la derecha */
   align-items: center;
-  height: 70px;
-  position: relative;
+  height: 100%;
 }
 
 .back-arrow {
   position: absolute;
-  left: 20px;  /* distancia desde el borde izquierdo */
-  top: 50%;
-  transform: translateY(-50%); /* lo centra verticalmente con el logo */
+  left: 20px;           /* margen izquierdo */
+  top: 50%;             /* centro vertical */
+  transform: translateY(-50%);
   color: var(--color-gold);
   font-weight: 600;
   font-size: 0.95rem;
@@ -732,12 +740,12 @@ transform:translateY(0);
 }
 
 
-
 </style>
 </head>
 <body>
 
 <header>
+     <a href="index.html" class="back-arrow">&lt; Home</a> <!-- Home afuera del .nav -->
 <div class="container nav">
       <div class="logo">
           <a href="index.html">
@@ -750,8 +758,6 @@ transform:translateY(0);
     <li><a href="index.html#galeria">Galería</a></li>
     <li><a href="index.html#contacto">Contacto</a></li>
   </ul>
-
-   <a href="index.html" class="back-arrow">&lt; Home</a>
 
 </div>
 </header>
