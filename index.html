@@ -605,34 +605,51 @@ transform:translateY(0);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.35); /* un poco más suave */
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
 
+  /* Fondo */
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+/* TEXTO */
 .overlay span {
-  color: #c9a96e ;
+  color: #c9a96e;
   font-size: 1.05rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease 0.15s,
+              transform 0.6s ease 0.15s;
 }
 
+/* Línea dorada */
 .overlay::after {
   content: "";
   width: 40px;
   height: 1px;
   background: #c9a96e;
-  opacity: 0.8;
+  margin-top: 8px;
+
+  opacity: 0;
+  transition: opacity 0.6s ease 0.2s;
 }
+
    
+* Hover */
 .carousel-item:hover .overlay {
+  opacity: 1;
+}
+
+.carousel-item:hover .overlay span {
   opacity: 1;
   transform: translateY(0);
 }
 
+.carousel-item:hover .overlay::after {
+  opacity: 1;
+}
 /* Botones */
 .carousel button {
   position: absolute;
