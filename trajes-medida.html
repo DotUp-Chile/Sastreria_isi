@@ -716,7 +716,7 @@ transform:translateY(0);
   height: 70px;
 }
 
-.nav {
+ .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -724,16 +724,18 @@ transform:translateY(0);
   position: relative;
 }
 
-/* Botón de volver al home */
+/* Contenedor izquierdo */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Botón volver al home */
 .back-home {
   color: var(--color-white);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  position: absolute;
-  left: 2rem;      /* margen izquierdo */
-  top: 50%;
-  transform: translateY(-50%);
   opacity: 0.85;
   transition: 0.3s;
 }
@@ -742,29 +744,41 @@ transform:translateY(0);
   color: var(--color-gold);
 }
 
+/* Logo sigue igual, no se mueve */
+.logo img {
+  height: 150px;
+  width: auto;
+  display: block;
+}
+
 
 
 </style>
 </head>
 <body>
-
+   
 <header>
-     
-<div class="container nav">
-   <a href="index.html" class="back-home">&lt; Home</a>
-      <div class="logo">
-          <a href="index.html">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" />
-    </a>
-      </div>
-  <ul class="nav-links">
-    <li><a href="index.html#servicios">Servicios</a></li>
-    <li><a href="index.html#proceso">Proceso</a></li>
-    <li><a href="index.html#galeria">Galería</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
-  </ul>
+  <div class="container nav">
+    <!-- Contenedor izquierdo para < Home -->
+    <div class="nav-left">
+      <a href="index.html" class="back-home">&lt; Home</a>
+    </div>
 
-</div>
+    <!-- Logo al centro/derecha -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" />
+      </a>
+    </div>
+
+    <!-- Menú -->
+    <ul class="nav-links">
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="index.html#proceso">Proceso</a></li>
+      <li><a href="index.html#galeria">Galería</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
 </header>
 
 <section class="hero" style="height:60vh;">
