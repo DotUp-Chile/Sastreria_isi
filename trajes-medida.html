@@ -707,13 +707,24 @@ transform:translateY(0);
 .nav-links .dropdown:hover .dropdown-menu {
   display: block;
 }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  position: relative;
+}
+
 .back-arrow {
+  position: absolute;
+  left: 2rem; /* a la izquierda del header */
   color: var(--color-gold);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  margin-right: 2rem; /* espacio entre logo y navegación */
   transition: color 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%); /* centra verticalmente con el header */
 }
 
 .back-arrow:hover {
@@ -727,12 +738,12 @@ transform:translateY(0);
 
 <header>
 <div class="container nav">
-  <div class="logo">
-    <a href="index.html">
+   <a href="index.html" class="back-arrow">&lt; Home</a> <!-- Flecha Home -->
+      <div class="logo">
+          <a href="index.html">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" />
     </a>
-      <a href="index.html" class="back-arrow">&lt; Home</a> <!-- Flecha Home -->
-  </div>
+      </div>
   <ul class="nav-links">
     <li><a href="index.html#servicios">Servicios</a></li>
     <li><a href="index.html#proceso">Proceso</a></li>
