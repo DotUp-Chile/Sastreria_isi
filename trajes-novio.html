@@ -708,25 +708,20 @@ transform:translateY(0);
   display: block;
 }
 
+
 .back-arrow {
-  position: fixed;      /* queda fijo mientras haces scroll */
-  top: 20px;            /* cerca del header */
-  left: 20px;           /* margen desde la izquierda */
   color: var(--color-gold);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-decoration: none;
-  background: rgba(0,0,0,0.5); /* sutil fondo oscuro */
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  z-index: 1000;        /* que esté sobre todo */
+  margin-right: 2rem; /* espacio entre logo y navegación */
+  transition: color 0.3s ease;
 }
 
 .back-arrow:hover {
-  background: rgba(0,0,0,0.7);
-  transform: translateX(-3px);
+  color: var(--color-white);
 }
+
 
 </style>
 </head>
@@ -738,6 +733,7 @@ transform:translateY(0);
     <a href="index.html">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" />
     </a>
+   <a href="index.html" class="back-arrow">&lt; Home</a> <!-- Flecha Home -->
   </div>
   <ul class="nav-links">
     <li><a href="index.html#servicios">Servicios</a></li>
@@ -782,13 +778,7 @@ transform:translateY(0);
     </a>
   </div>
 </section>
-
-
-<!-- Flecha minimalista para volver al Home -->
-<a href="index.html" class="back-arrow">&lt; Home</a>
-
-
-
+   
 <footer>© 2026 Sastrería Dot.Up</footer>
 </body>
 </html>
