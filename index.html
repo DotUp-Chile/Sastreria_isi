@@ -711,6 +711,32 @@ transform:translateY(0);
 .nav-links .dropdown:hover .dropdown-menu {
   display: block;
 }
+   
+/* Contenedor general de los servicios */
+.services-grid {
+  display: flex;            /* Activamos flexbox */
+  flex-wrap: wrap;          /* Permite que los items bajen de línea si no caben */
+  justify-content: center;  /* Centra horizontalmente */
+  gap: 50px;                /* Espacio entre cards */
+  margin-top: 30px;         /* Separación del título */
+}
+
+/* Cada card individual */
+.card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.4s;
+  display: flex;            /* Flex dentro de la card */
+  flex-direction: column;   /* Columnas para imagen, texto y botón */
+  align-items: center;      /* Centra todo horizontalmente dentro de la card */
+}
+
+/* El botón dentro de la card */
+.card .btn {
+  margin-top: 15px;         /* Separación del texto */
+}
 
 </style>
 </head>
