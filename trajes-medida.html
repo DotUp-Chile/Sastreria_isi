@@ -718,26 +718,30 @@ transform:translateY(0);
 
 .nav {
   display: flex;
-  justify-content: flex-end; /* logo y nav a la derecha */
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 70px;
+  position: relative;
 }
 
-.back-arrow {
-  position: absolute;
-  left: 20px;           /* margen izquierdo */
-  top: 50%;             /* centro vertical */
-  transform: translateY(-50%);
-  color: var(--color-gold);
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  z-index: 1001;
-}
-
-.back-arrow:hover {
+/* Botón de volver al home */
+.back-home {
   color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: absolute;
+  left: 2rem;      /* margen izquierdo */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.85;
+  transition: 0.3s;
 }
+
+.back-home:hover {
+  color: var(--color-gold);
+}
+
 
 
 </style>
@@ -745,8 +749,9 @@ transform:translateY(0);
 <body>
 
 <header>
-     <a href="index.html" class="back-arrow">&lt; Home</a> <!-- Home afuera del .nav -->
+     
 <div class="container nav">
+   <a href="index.html" class="back-home">&lt; Home</a>
       <div class="logo">
           <a href="index.html">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" />
