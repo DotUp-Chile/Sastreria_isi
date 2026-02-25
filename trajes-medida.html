@@ -709,34 +709,28 @@ transform:translateY(0);
 }
 .nav {
   display: flex;
+  justify-content: space-between; /* logo a la izquierda, nav a la derecha */
   align-items: center;
-  justify-content: flex-start; /* alineamos todo al inicio */
-  gap: 2rem; /* espacio entre back-arrow, logo y nav */
   height: 70px;
   position: relative;
 }
 
 .back-arrow {
+  position: absolute;
+  left: 20px;  /* distancia desde el borde izquierdo */
+  top: 50%;
+  transform: translateY(-50%); /* lo centra verticalmente con el logo */
   color: var(--color-gold);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  transition: color 0.3s ease;
+  z-index: 1001;
 }
 
 .back-arrow:hover {
   color: var(--color-white);
 }
 
-.logo {
-  margin-left: auto; /* empuja la navegación a la derecha */
-}
-
-.nav-links {
-  margin-left: 2rem;
-  display: flex;
-  gap: 2rem;
-}
 
 
 </style>
@@ -745,7 +739,6 @@ transform:translateY(0);
 
 <header>
 <div class="container nav">
-      <a href="index.html" class="back-arrow">&lt; Home</a>
       <div class="logo">
           <a href="index.html">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" />
@@ -757,6 +750,9 @@ transform:translateY(0);
     <li><a href="index.html#galeria">Galería</a></li>
     <li><a href="index.html#contacto">Contacto</a></li>
   </ul>
+
+   <a href="index.html" class="back-arrow">&lt; Home</a>
+
 </div>
 </header>
 
