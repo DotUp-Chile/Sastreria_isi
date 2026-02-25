@@ -707,25 +707,26 @@ transform:translateY(0);
 .nav-links .dropdown:hover .dropdown-menu {
   display: block;
 }
-.back-arrow-header {
+.back-arrow {
   position: fixed;      /* queda fijo mientras haces scroll */
-  top: 90px;            /* justo debajo del header de 70px */
+  top: 20px;            /* cerca del header */
   left: 20px;           /* margen desde la izquierda */
-  background: var(--color-gold);
-  color: black;
+  color: var(--color-gold);
   font-weight: 600;
-  padding: 10px 15px;
-  border-radius: 8px;
+  font-size: 1rem;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.5); /* sutil fondo oscuro */
+  padding: 6px 12px;
+  border-radius: 6px;
   transition: all 0.3s ease;
   z-index: 1000;        /* que esté sobre todo */
 }
 
-.back-arrow-header:hover {
-  background: var(--color-gold-soft);
+.back-arrow:hover {
+  background: rgba(0,0,0,0.7);
   transform: translateX(-3px);
 }
+
 
 </style>
 </head>
@@ -781,8 +782,9 @@ transform:translateY(0);
     </a>
   </div>
 </section>
-<!-- Flecha de regreso al Home, cerca del header -->
-<a href="index.html" class="back-arrow-header">&larr; Home</a>
+
+   <!-- Flecha minimalista para volver al Home -->
+<a href="index.html" class="back-arrow">&lt; Home</a>
 
 
 
