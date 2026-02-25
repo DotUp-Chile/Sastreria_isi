@@ -600,7 +600,7 @@ transform:translateY(0);
 
 .overlay {
   position: absolute;
-  inset: 0; /* ocupa toda la imagen */
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -609,12 +609,15 @@ transform:translateY(0);
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0;
-  transition: opacity 0.4s ease;
-  background: rgba(0,0,0,0.45); /* oscurecimiento uniforme */
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  background: rgba(0,0,0,0.45);
 }
+
 
 .carousel-item:hover .overlay {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* Botones */
