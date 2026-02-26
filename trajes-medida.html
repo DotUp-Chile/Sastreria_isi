@@ -68,21 +68,22 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
 .contact strong{color:var(--color-gold);font-size:1.2rem;}
 footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
 .whatsapp-btn{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  background:#25D366;
-  width:65px;
-  height:65px;
-  display:flex;
-  align-items:center
-  ;justify-content:center
-  ;border-radius:50%
-  ;box-shadow:0 10px 30px rgba(0,0,0,0.4);
-  transition:all 0.3s ease;
-  z-index:999;
-  animation:pulse 2.5s infinite;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+  animation: pulse 2.5s infinite;
 }
+
 .whatsapp-btn.hidden{
   opacity:0;pointer-events:none;transform:translateY(20px);
 }
@@ -92,7 +93,7 @@ footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.
 .whatsapp-btn svg.whatsapp-icon {
   width: 50%;
   height: 50%;
-  fill: white; /* el icono ahora sí queda blanco sobre el círculo verde */
+  fill: white; /* blanco sobre el círculo verde */
   display: block;
 }
 
