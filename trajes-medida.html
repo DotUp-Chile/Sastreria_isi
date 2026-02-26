@@ -134,13 +134,34 @@ section:hover h2::after{width:80px;}
 .process-grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));text-align:center;}
 .process-number{font-size:2.5rem;color:var(--color-gold);margin-bottom:10px;}
 .testimonials-grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:50px;}
-.testimonial-card{background: rgba(201,169,110,0.05);padding: 25px;border-radius: 12px;border: 1px solid rgba(201,169,110,0.2);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:0.4s;}
+/* Testimonios mejor alineados */
+.testimonial-card {
+  background: rgba(201,169,110,0.05);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,169,110,0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* antes estaba center */
+  transition:0.4s;
+  max-width: 320px; /* opcional para que no estiren demasiado */
+}
+
 .testimonial-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
 .testimonial-card p{font-style:italic;color:#333;margin-bottom:15px;}
 .testimonial-info{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:15px;}
 .testimonial-info img{border-radius:50%;width:120px;height:120px;object-fit:cover;}
 
 /* Modal */
+
+/* Ocultar modal al inicio */
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .modal {
   position: fixed;
   top: 0; left: 0;
@@ -230,7 +251,8 @@ section:hover h2::after{width:80px;}
 </div>
 </header>
 
-<section class="hero" style="height:60vh;">
+<!-- Agrega id al hero -->
+<section id="hero" class="hero" style="height:60vh;">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span>Trajes a Medida</span>
@@ -375,20 +397,29 @@ window.addEventListener("scroll", () => {
   const modalInfo = document.getElementById('modal-info');
   const modalClose = document.querySelector('.modal-close');
 
-  galleryImgs.forEach(img => {
-    img.addEventListener('click', () => {
-      modal.classList.add('show');
-      modalImg.src = img.src;
-      modalTitle.textContent = img.alt;
-      modalInfo.textContent = img.dataset.info;
-    });
+  // JS modal (mantener show y hidden separados)
+galleryImgs.forEach(img => {
+  img.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('show');
+    modalImg.src = img.src;
+    modalTitle.textContent = img.alt;
+    modalInfo.textContent = img.dataset.info;
   });
+});
 
-  modalClose.addEventListener('click', () => modal.classList.remove('show'));
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('show');
+  modal.classList.add('hidden');
+});
 
-  modal.addEventListener('click', e => {
-    if(e.target === modal) modal.classList.remove('show');
-  });
+modal.addEventListener('click', e => {
+  if(e.target === modal){
+    modal.classList.remove('show');
+    modal.classList.add('hidden');
+  }
+});
+
 </script>
 
 <footer>© 2026 Sastrería Dot.Up</footer>
