@@ -139,6 +139,77 @@ section:hover h2::after{width:80px;}
 .testimonial-card p{font-style:italic;color:#333;margin-bottom:15px;}
 .testimonial-info{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:15px;}
 .testimonial-info img{border-radius:50%;width:120px;height:120px;object-fit:cover;}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content {
+  background: var(--color-dark-2);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 90%;
+}
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.modal-body img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.modal-text {
+  flex: 1;
+  color: var(--color-white);
+}
+
+.modal-text h3 {
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.modal-text p {
+  line-height: 1.6;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2rem;
+  color: var(--color-gold);
+  cursor: pointer;
+}
+
+@media(max-width:768px){
+  .modal-body {flex-direction: column;}
+  .modal-body img {max-width: 100%;}
+}
+
+  
 </style>
 </head>
 <body>
@@ -216,13 +287,25 @@ section:hover h2::after{width:80px;}
     <p>Explora nuestra galería y descubre trajes que cuentan historias. Cada imagen refleja elegancia, precisión y un cuidado excepcional en cada detalle.</p>
     
     <div class="gallery">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true" alt="Traje 1">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" alt="Traje 2">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true" alt="Traje 3">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" alt="Traje 4">
+  <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true" alt="Traje 1" data-info="Traje clásico de lana merino, corte slim, detalles en solapa dorada.">
+  <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" alt="Traje 2" data-info="Traje de lino fresco, ideal verano, acabado artesanal y botones personalizados.">
+  <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true" alt="Traje 3" data-info="Traje elegante con forro exclusivo, costura a mano y estilo sofisticado para eventos.">
+  <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" alt="Traje 4" data-info="Traje de novio a medida, corte clásico con detalles finos y tela premium.">
+</div>
+
+<!-- Modal -->
+<div id="gallery-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <div class="modal-body">
+      <img id="modal-img" src="" alt="Traje grande">
+      <div class="modal-text">
+        <h3 id="modal-title"></h3>
+        <p id="modal-info"></p>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
 
 <section id="testimonios" class="section-light">
@@ -281,10 +364,32 @@ window.addEventListener("scroll", () => {
   }
 });
 </script>
-
-
   </div>
 </section>
+
+  <script>
+  const galleryImgs = document.querySelectorAll('.gallery img');
+  const modal = document.getElementById('gallery-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalTitle = document.getElementById('modal-title');
+  const modalInfo = document.getElementById('modal-info');
+  const modalClose = document.querySelector('.modal-close');
+
+  galleryImgs.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.classList.add('show');
+      modalImg.src = img.src;
+      modalTitle.textContent = img.alt;
+      modalInfo.textContent = img.dataset.info;
+    });
+  });
+
+  modalClose.addEventListener('click', () => modal.classList.remove('show'));
+
+  modal.addEventListener('click', e => {
+    if(e.target === modal) modal.classList.remove('show');
+  });
+</script>
 
 <footer>© 2026 Sastrería Dot.Up</footer>
 </body>
