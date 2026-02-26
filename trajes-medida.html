@@ -9,9 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* =========================
-   VARIABLES PROFESIONALES
-========================= */
 :root{
 --color-dark:#141414;
 --color-dark-2:#0e0e0e;
@@ -22,9 +19,6 @@
 --color-gray:#a0a0a0;
 --container:1200px;
 }
-/* =========================
-RESET
-========================= */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--color-dark);color:var(--color-white);overflow-x:hidden;}
@@ -53,10 +47,6 @@ header.scrolled{background:rgba(0,0,0,0.85);}
 .hero-content p{animation-delay:0.9s;}
 .hero-content .btn{animation-delay:1.2s;}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
-.scroll-down{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:24px;height:40px;border:2px solid var(--color-gold);border-radius:12px;display:flex;align-items:flex-start;justify-content:center;padding-top:4px;box-shadow:0 0 10px rgba(201,169,110,0.5);animation:pulseArrow 2s infinite;cursor:pointer;text-decoration:none;}
-.scroll-down span{display:block;width:4px;height:4px;background:var(--color-gold);margin:6px auto;border-radius:50%;animation:scroll 1.5s infinite;}
-@keyframes pulseArrow{0%,100%{box-shadow:0 0 10px rgba(201,169,110,0.5);}50%{box-shadow:0 0 20px rgba(201,169,110,0.9);}}
-@keyframes scroll{0%{transform:translateY(0);opacity:1;}50%{transform:translateY(10px);opacity:0.5;}100%{transform:translateY(0);opacity:1;}}
 .btn{position:relative;overflow:hidden;display:inline-block;background:var(--color-gold);color:black;padding:14px 34px;text-decoration:none;font-weight:600;letter-spacing:1px;transition:all 0.3s ease;}
 .btn::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);transition:0.6s;}
 .btn:hover::before{left:100%;}
@@ -85,10 +75,16 @@ footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.
 h2{position:relative;display:inline-block;padding-bottom:15px;}
 h2::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--color-gold);transition:0.6s ease;}
 section:hover h2::after{width:80px;}
-.reveal{opacity:0;transform:translateY(60px);transition:all 0.8s ease;}
-.reveal.active{opacity:1;transform:translateY(0);}
 .back-arrow{color:var(--color-gold);font-weight:600;font-size:0.95rem;text-decoration:none;margin-right:2rem;transition:color 0.3s ease;}
 .back-arrow:hover{color:var(--color-white);}
+.process-grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));text-align:center;}
+.process-number{font-size:2.5rem;color:var(--color-gold);margin-bottom:10px;}
+.testimonials-grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:50px;}
+.testimonial-card{background: rgba(201,169,110,0.05);padding: 25px;border-radius: 12px;border: 1px solid rgba(201,169,110,0.2);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:0.4s;}
+.testimonial-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.testimonial-card p{font-style:italic;color:#333;margin-bottom:15px;}
+.testimonial-info{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:15px;}
+.testimonial-info img{border-radius:50%;width:120px;height:120px;object-fit:cover;}
 </style>
 </head>
 <body>
@@ -96,16 +92,15 @@ section:hover h2::after{width:80px;}
 <header>
 <div class="container nav">
   <div class="logo">
-    <a href="index.html">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" />
-    </a>
+    <a href="index.html"><img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" /></a>
     <a href="index.html" class="back-arrow">&lt; Home</a>
   </div>
   <ul class="nav-links">
-    <li><a href="index.html#servicios">Servicios</a></li>
-    <li><a href="index.html#proceso">Proceso</a></li>
-    <li><a href="index.html#galeria">Galería</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
+    <li><a href="#detalles">Detalles</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
 </div>
 </header>
@@ -116,15 +111,15 @@ section:hover h2::after{width:80px;}
     <span>Trajes a Medida</span>
     <h1>Confecciones Únicas y Personalizadas</h1>
     <p>Elige entre telas premium y diseños exclusivos que se ajustan perfectamente a tu estilo.</p>
-    <a href="index.html#contacto" class="btn">Agendar cita</a>
+    <a href="#contacto" class="btn">Agendar cita</a>
   </div>
 </section>
 
-<section class="section-light">
+<section id="detalles" class="section-light">
   <div class="container">
     <h2>Detalles del Servicio</h2>
-    <p>Nuestros trajes a medida combinan elegancia y comodidad. Trabajamos con telas de alta calidad como lana, lino, algodón y mezclas especiales, adaptando cada diseño a tu cuerpo y ocasión.</p>
-    <p>Puedes personalizar: corte, solapas, botones, forro, bolsillo y hasta el color de las costuras. Cada detalle está pensado para reflejar tu estilo único.</p>
+    <p>Trabajamos con telas de alta calidad como lana, lino y algodón. Cada traje se ajusta a tu cuerpo, ocasión y estilo personal.</p>
+    <p>Personaliza corte, solapas, botones, forro, bolsillos y colores. Cada detalle refleja tu estilo único.</p>
     <div class="gallery">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true" alt="Traje a medida 1">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" alt="Traje a medida 2">
@@ -133,7 +128,71 @@ section:hover h2::after{width:80px;}
   </div>
 </section>
 
-<section class="section-dark">
+<section id="proceso" class="section-dark-2">
+  <div class="container">
+    <h2>Proceso de Confección</h2>
+    <div class="process-grid">
+      <div>
+        <div class="process-number">1</div>
+        <h3>Asesoría Personalizada</h3>
+        <p>Definimos estilo, corte y telas según tus preferencias.</p>
+      </div>
+      <div>
+        <div class="process-number">2</div>
+        <h3>Mediciones Exactas</h3>
+        <p>Tomamos medidas precisas para garantizar el ajuste perfecto.</p>
+      </div>
+      <div>
+        <div class="process-number">3</div>
+        <h3>Confección a Mano</h3>
+        <p>Cada traje se confecciona cuidadosamente con técnicas profesionales.</p>
+      </div>
+      <div>
+        <div class="process-number">4</div>
+        <h3>Prueba y Ajustes</h3>
+        <p>Realizamos pruebas y ajustes finales para tu comodidad y estilo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="section-light">
+  <div class="container">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true" alt="Traje 1">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" alt="Traje 2">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true" alt="Traje 3">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" alt="Traje 4">
+    </div>
+  </div>
+</section>
+
+<section id="testimonios" class="section-dark">
+  <div class="container">
+    <h2>Testimonios</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-info">
+          <img src="https://i.pravatar.cc/120?img=12" alt="Cliente 1">
+          <h3>Juan P.</h3>
+          <span>Cliente satisfecho</span>
+        </div>
+        <p>"El traje quedó perfecto. Todo el proceso fue profesional y muy personalizado."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-info">
+          <img src="https://i.pravatar.cc/120?img=15" alt="Cliente 2">
+          <h3>Carlos M.</h3>
+          <span>Cliente satisfecho</span>
+        </div>
+        <p>"Me encantó la selección de telas y los detalles del acabado. ¡Recomendado!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section-light">
   <div class="container contact">
     <h2>Contacto</h2>
     <p>Agenda tu cita vía WhatsApp o teléfono.</p>
@@ -141,7 +200,7 @@ section:hover h2::after{width:80px;}
     <p>Santiago, Chile</p>
     <a href="https://wa.me/569XXXXXXXX" class="whatsapp-btn" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
-        <path d="M16.001 3C8.82 3 3 8.821 3 16.002c0 2.823.922 5.426 2.48 7.53L3 29l5.623-2.412a12.93 12.93 0 0 0 7.378 2.314h.001c7.18 0 13-5.82 13-13S23.181 3 16.001 3zm0 23.904a10.87 10.87 0 0 1-5.54-1.51l-.397-.236-3.336 1.43.712-3.456-.258-.356a10.865 10.865 0 1 1 8.82 4.128zm5.957-8.157c-.326-.163-1.926-.951-2.225-1.06-.299-.109-.517-.163-.735.164-.217.326-.843 1.06-1.034 1.277-.19.217-.381.245-.707.082-.326-.163-1.377-.508-2.623-1.62-.969-.864-1.623-1.932-1.814-2.258-.19-.326-.02-.502.143-.665.146-.146.326-.381.49-.571.163-.19.217-.326.326-.544.109-.217.054-.408-.027-.571-.082-.163-.735-1.773-1.007-2.427-.265-.637-.535-.551-.735-.561l-.626-.011c-.217 0-.571.082-.87.408-.299.326-1.143 1.117-1.143 2.726 0 1.609 1.17 3.164 1.334 3.381.163.217 2.304 3.52 5.584 4.935.781.337 1.39.538 1.865.689.783.249 1.496.214 2.06.13.629-.094 1.926-.787 2.197-1.547.272-.76.272-1.411.19-1.547-.081-.136-.299-.217-.625-.381z"/>
+        <path d="M16.001 3C8.82 3 3 8.821 3 16.002c0 2.823.922 5.426 2.48 7.53L3 29l5.623-2.412a12.93 12.93 0 0 0 7.378 2.314h.001c7.18 0 13-5.82 13-13S23.181 3 16.001 3zm0 23.904a10.87 10.87 0 0 1-5.54-1.51l-.397-.236-3.336 1.43.712-3.456-.258-.356a10.865 10.865 0 1 1 8.82 4.128z"/>
       </svg>
     </a>
   </div>
