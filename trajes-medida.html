@@ -82,10 +82,27 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
 }
 .swiper-button-next,
 .swiper-button-prev {
-  background: rgba(201,169,110,0.5); /* dorado suave con transparencia */
+  width: 50px;
+  height: 50px;
+  background: rgba(0,0,0,0.5); /* círculo semitransparente negro */
   border-radius: 50%;
-  padding: 10px;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c9a96e; /* flecha dorada */
+  font-size: 1.5rem;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #c9a96e; /* fuerza el dorado */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0,0,0,0.8); /* más oscuro al pasar el mouse */
 }
 
 .contact{text-align:center;}
