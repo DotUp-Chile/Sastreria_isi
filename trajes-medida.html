@@ -61,9 +61,35 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
 .card img{width:100%;height:300px;object-fit:cover;margin-bottom:1rem;transition:0.5s;}
 .card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.4);border:1px solid rgba(201,169,110,0.4);}
 .card h3{margin-bottom:0.5rem;}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;}
-.gallery img{width:100%;height:350px;object-fit:cover;transition:0.5s;}
-.gallery img:hover{transform:scale(1.08);}
+/* Galería mejorada */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px; /* más espacio entre imágenes */
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px; /* esquinas redondeadas */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Espacio entre el texto y la galería */
+#galeria p {
+  margin-bottom: 1.5rem; /* separa el texto de las fotos */
+  color: var(--color-gray);
+  line-height: 1.8;
+}
+
 .contact{text-align:center;}
 .contact strong{color:var(--color-gold);font-size:1.2rem;}
 footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
@@ -188,6 +214,7 @@ section:hover h2::after{width:80px;}
   <div class="container">
     <h2>Momentos que Visten Historia</h2>
     <p>Explora nuestra galería y descubre trajes que cuentan historias. Cada imagen refleja elegancia, precisión y un cuidado excepcional en cada detalle.</p>
+    
     <div class="gallery">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true" alt="Traje 1">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" alt="Traje 2">
@@ -196,6 +223,7 @@ section:hover h2::after{width:80px;}
     </div>
   </div>
 </section>
+
 
 <section id="testimonios" class="section-light">
   <div class="container">
