@@ -80,29 +80,36 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
   transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
-.swiper-button-next,
-.swiper-button-prev {
+.custom-prev,
+.custom-next {
   width: 50px;
   height: 50px;
-  background: rgba(0,0,0,0.5); /* círculo semitransparente negro */
+  background: rgba(0,0,0,0.5); /* círculo semitransparente */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #c9a96e; /* flecha dorada */
-  font-size: 1.5rem;
+  z-index: 10;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  color: #c9a96e; /* fuerza el dorado */
+.custom-prev { left: 10px; }
+.custom-next { right: 10px; }
+
+.custom-prev:hover,
+.custom-next:hover {
+  background: rgba(0,0,0,0.8);
+  transform: translateY(-50%) scale(1.1);
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: rgba(0,0,0,0.8); /* más oscuro al pasar el mouse */
+.custom-prev svg,
+.custom-next svg {
+  display: block;
+  stroke: #c9a96e; /* dorado */
 }
 
 .contact{text-align:center;}
@@ -350,8 +357,15 @@ section:hover h2::after{width:80px;}
     <!-- Agrega más slides aquí sin problema -->
   </div>
   <!-- Botones de navegación -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-prev custom-prev">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M15 18l-6-6 6-6" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+<div class="swiper-button-next custom-next">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M9 6l6 6-6 6" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
 </div>
 
 
@@ -465,19 +479,21 @@ modal.addEventListener('click', e => {
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-const swiper = new Swiper('.swiper', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 3,
+  spaceBetween: 25,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
   },
+  loop: true,
   breakpoints: {
-    640: { slidesPerView: 2 },
+    320: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
     1024: { slidesPerView: 3 },
   },
 });
+
 </script>
 
 <footer>© 2026 Sastrería Dot.Up</footer>
