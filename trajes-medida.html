@@ -3,194 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dot.Up | Trajes a Medida en Santiago</title>
-<meta name="description" content="Confección personalizada de trajes a medida en Santiago. Ajuste perfecto, telas de calidad y atención experta.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Trajes a Medida | Dot.Up</title>
+<meta name="description" content="Confección personalizada de trajes a medida. Elige telas premium, estilos clásicos o modernos y un ajuste perfecto.">
 
 <style>
-/* =========================
-   VARIABLES
-========================= */
 :root{
---color-dark:#141414;
---color-dark-2:#0e0e0e;
---color-gold:#c9a96e;
---color-gold-soft:#e5d2a3;
---color-light:#f4f1ea;
---color-white:#ffffff;
---color-gray:#a0a0a0;
---container:1200px;
+  --color-dark:#141414;
+  --color-dark-2:#0e0e0e;
+  --color-gold:#c9a96e;
+  --color-gold-soft:#e5d2a3;
+  --color-light:#f4f1ea;
+  --color-white:#ffffff;
+  --color-gray:#a0a0a0;
+  --container:1200px;
 }
 
-/* =========================
-RESET
-========================= */
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--color-dark);color:var(--color-white);overflow-x:hidden;}
-
-/* =========================
-TIPOGRAFÍA
-========================= */
 h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;letter-spacing:0.5px;}
 h1{font-size:clamp(2.5rem,5vw,4rem);}
 h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:2rem;text-align:center;}
 p{line-height:1.8;color:var(--color-gray);}
-
-/* =========================
-CONTAINER
-========================= */
 .container{max-width:var(--container);margin:auto;padding:0 2rem;}
+a{text-decoration:none;color:inherit;}
 
-/* =========================
-HEADER
-========================= */
+/* HEADER */
 header{position:fixed;top:0;width:100%;z-index:1000;background:transparent;transition:0.4s ease;}
 header.scrolled{background:rgba(0,0,0,0.85);}
 .nav{display:flex;justify-content:space-between;align-items:center;height:70px;}
-.logo img{height:150px;width:auto;display:block;}
+.logo img{height:100px;width:auto;display:block;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{text-decoration:none;color:white;font-size:0.95rem;opacity:0.85;position:relative;}
-.nav-links a::after{content:"";position:absolute;bottom:-6px;left:0;width:0%;height:1px;background:var(--color-gold);transition:0.3s;}
+.nav-links a{color:white;opacity:0.85;position:relative;}
+.nav-links a::after{content:"";position:absolute;bottom:-6px;left:0;width:0;height:1px;background:var(--color-gold);transition:0.3s;}
 .nav-links a:hover::after{width:100%;}
 
-/* =========================
-HERO
-========================= */
-.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.35);z-index:-1;}
-.hero-content{max-width:800px;position:relative;z-index:1;color:var(--color-white);}
-.hero-content span{color:var(--color-gold);letter-spacing:3px;font-size:0.85rem;text-transform:uppercase;}
-.hero-content h1{margin-top:20px;}
-.hero-content p{margin:1.5rem 0;font-size:1.1rem;}
-.hero-content span,.hero-content h1,.hero-content p,.hero-content .btn{opacity:0;transform:translateY(40px);animation:fadeUp 1s ease forwards;}
-.hero-content span{animation-delay:0.3s;}
-.hero-content h1{animation-delay:0.6s;}
-.hero-content p{animation-delay:0.9s;}
-.hero-content .btn{animation-delay:1.2s;}
-@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
-.scroll-down{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:24px;height:40px;border:2px solid var(--color-gold);border-radius:12px;display:flex;align-items:flex-start;justify-content:center;padding-top:4px;box-shadow:0 0 10px rgba(201,169,110,0.5);animation:pulseArrow 2s infinite;cursor:pointer;text-decoration:none;}
-.scroll-down span{display:block;width:4px;height:4px;background:var(--color-gold);margin:6px auto;border-radius:50%;animation:scroll 1.5s infinite;}
-@keyframes pulseArrow{0%,100%{box-shadow:0 0 10px rgba(201,169,110,0.5);}50%{box-shadow:0 0 20px rgba(201,169,110,0.9);}}
-@keyframes scroll{0%{transform:translateY(0);opacity:1;}50%{transform:translateY(10px);opacity:0.5;}100%{transform:translateY(0);opacity:1;}}
+/* HERO */
+.hero{position:relative;height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--color-dark);}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1;}
+.hero-content{position:relative;z-index:2;max-width:700px;}
+.hero-content h1{margin-bottom:1rem;}
+.hero-content p{margin-bottom:1.5rem;font-size:1.1rem;}
+.btn{position:relative;display:inline-block;background:var(--color-gold);color:black;padding:14px 34px;font-weight:600;letter-spacing:1px;transition:all 0.3s ease;}
+.btn:hover{opacity:0.85;}
 
-/* =========================
-BOTÓN
-========================= */
-.btn{position:relative;overflow:hidden;display:inline-block;background:var(--color-gold);color:black;padding:14px 34px;text-decoration:none;font-weight:600;letter-spacing:1px;transition:all 0.3s ease;}
-.btn::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);transition:0.6s;}
-.btn:hover::before{left:100%;}
-
-/* =========================
-SECCIONES
-========================= */
+/* SECCIONES */
 section{padding:120px 0;position:relative;}
-section::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:90%;height:1px;background:rgba(255,255,255,0.05);}
 .section-dark{background:var(--color-dark);}
 .section-light{background:var(--color-light);color:black;}
 .section-light p{color:#444;}
+h2{position:relative;display:inline-block;padding-bottom:15px;}
+h2::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--color-gold);transition:0.6s ease;}
+section:hover h2::after{width:80px;}
 
-/* =========================
-SERVICIOS
-========================= */
-.services-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:50px;margin-top:30px;}
-.card{background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);padding:20px;border:1px solid rgba(255,255,255,0.05);transition:0.4s;display:flex;flex-direction:column;align-items:center;}
-.card img{width:100%;height:300px;object-fit:cover;margin-bottom:1rem;transition:0.5s;}
-.card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.4);border:1px solid rgba(201,169,110,0.4);}
-.card h3{margin-bottom:0.5rem;}
-.card .btn{margin-top:15px;}
+/* DETALLES */
+.details-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;margin-top:50px;}
+.details-card{background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);padding:20px;border:1px solid rgba(255,255,255,0.05);transition:0.4s;}
+.details-card img{width:100%;height:250px;object-fit:cover;margin-bottom:1rem;}
+.details-card h3{margin-bottom:0.5rem;}
 
-/* =========================
-RESPONSIVE
-========================= */
-@media(max-width:768px){.nav-links{display:none;}}
+/* GALERÍA */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;margin-top:40px;}
+.gallery img{width:100%;height:300px;object-fit:cover;transition:0.5s;}
+.gallery img:hover{transform:scale(1.08);}
+
+/* FOOTER */
+footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
+
+/* WHATSAPP */
+.whatsapp-btn{position:fixed;bottom:30px;right:30px;background:#25D366;width:65px;height:65px;display:flex;align-items:center;justify-content:center;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:all 0.3s ease;z-index:999;animation:pulse 2.5s infinite;}
+.whatsapp-btn.hidden{opacity:0;pointer-events:none;transform:translateY(20px);}
 </style>
 </head>
-
 <body>
 
 <header>
 <div class="container nav">
 <div class="logo">
-  <a href="trajes-medida.html"><img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" alt="Dot.Up Logo" /></a>
+  <a href="index.html"><img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/dotup.png?raw=true" /></a>
 </div>
 <ul class="nav-links">
   <li><a href="index.html">Inicio</a></li>
-  <li><a href="trajes-medida.html">Trajes a Medida</a></li>
-  <li><a href="ajustes.html">Ajustes</a></li>
-  <li><a href="trajes-novio.html">Trajes de Novio</a></li>
+  <li><a href="#detalles">Detalles</a></li>
+  <li><a href="#galeria">Galería</a></li>
   <li><a href="#contacto">Contacto</a></li>
 </ul>
 </div>
 </header>
 
-<section class="hero" id="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="https://github.com/DotUp-Chile/Sastreria_isi/raw/refs/heads/main/minimovies.mp4" type="video/mp4">
-    Tu navegador no soporta video.
-  </video>
+<section class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span>Alta Sastrería en Santiago</span>
-    <h1>Trajes a Medida Perfectos para Ti</h1>
-    <p>Confección personalizada con telas de alta calidad, ajuste exacto y atención experta para cada cliente.</p>
-    <a href="#servicios" class="btn">Ver Servicios</a>
+    <h1>Trajes a Medida Perfectos</h1>
+    <p>Confección personalizada con telas premium y ajuste impecable a tu medida.</p>
+    <a href="#contacto" class="btn">Agendar cita</a>
   </div>
-  <a href="#servicios" class="scroll-down"><span></span></a>
 </section>
 
-<section id="servicios" class="section-dark">
-<div class="container">
-<h2>Nuestros Servicios</h2>
-<div class="services-grid">
-
-<div class="card">
-<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/traje-medida.jpeg?raw=true" alt="Trajes a Medida">
-<h3>Confección Personalizada</h3>
-<p>Ajuste perfecto y diseño exclusivo según tu estilo y medidas.</p>
-<a href="#contacto" class="btn">Agendar Cita</a>
-</div>
-
-<div class="card">
-<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/ajustes.jpeg?raw=true" alt="Ajustes">
-<h3>Mejoras y Ajustes</h3>
-<p>Corrección de tallas y detalles para que tu traje se vea impecable.</p>
-<a href="#contacto" class="btn">Agendar Cita</a>
-</div>
-
-<div class="card">
-<img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" alt="Trajes de Novio">
-<h3>Trajes de Novio</h3>
-<p>Elegancia y perfección para uno de los días más importantes.</p>
-<a href="#contacto" class="btn">Agendar Cita</a>
-</div>
-
-</div>
-</div>
+<section id="detalles" class="section-dark">
+  <div class="container">
+    <h2>Confecciones Personalizadas</h2>
+    <div class="details-grid">
+      <div class="details-card">
+        <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/traje-medida.jpeg?raw=true" alt="Traje clásico">
+        <h3>Traje Clásico</h3>
+        <p>Diseño elegante y atemporal, con cortes precisos y telas de alta calidad.</p>
+      </div>
+      <div class="details-card">
+        <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/ajustes.jpeg?raw=true" alt="Traje moderno">
+        <h3>Traje Moderno</h3>
+        <p>Estilo slim fit, moderno y sofisticado, ideal para eventos formales y corporativos.</p>
+      </div>
+      <div class="details-card">
+        <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" alt="Telas premium">
+        <h3>Telas Premium</h3>
+        <p>Variedad de lanas, sedas y mezclas exclusivas para lograr textura y caída perfectas.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="contacto" class="section-light">
-<div class="container contact">
-<h2>Contacto</h2>
-<p>Agenda tu cita vía WhatsApp o teléfono.</p>
-<p><strong>+56 9 8888 6666</strong></p>
-<p>Santiago, Chile</p>
-</div>
+<section id="galeria" class="section-light">
+  <div class="container">
+    <h2>Galería de Ejemplos</h2>
+    <div class="gallery">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true" alt="Traje 1">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" alt="Traje 2">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true" alt="Traje 3">
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section-dark">
+  <div class="container">
+    <h2>Contacto</h2>
+    <p>Agenda tu cita vía WhatsApp o teléfono.</p>
+    <p><strong>+56 9 8888 6666</strong></p>
+    <p>Santiago, Chile</p>
+    <a href="https://wa.me/56988886666" target="_blank" class="btn">Enviar WhatsApp</a>
+  </div>
 </section>
 
 <footer>
-© 2026 Sastrería Dot.Up
+© 2026 Dot.Up | Trajes a Medida
 </footer>
+
+<a href="https://wa.me/56988886666" class="whatsapp-btn hidden" target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
+  <path d="M16.001 3C8.82 3 3 8.821 3 16.002c0 2.823.922 5.426 2.48 7.53L3 29l5.623-2.412a12.93 12.93 0 0 0 7.378 2.314h.001c7.18 0 13-5.82 13-13S23.181 3 16.001 3zm0 23.904a10.87 10.87 0 0 1-5.54-1.51l-.397-.236-3.336 1.43.712-3.456-.258-.356a10.865 10.865 0 1 1 8.82 4.128z"/>
+  </svg>
+</a>
 
 <script>
 window.addEventListener("scroll", function(){
   const header = document.querySelector("header");
   header.classList.toggle("scrolled", window.scrollY > 50);
+
+  const whatsappBtn = document.querySelector(".whatsapp-btn");
+  const heroHeight = document.querySelector(".hero").offsetHeight;
+  if(window.scrollY > heroHeight - 50){ whatsappBtn.classList.remove("hidden"); } 
+  else { whatsappBtn.classList.add("hidden"); }
 });
 </script>
 
