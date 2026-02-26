@@ -152,20 +152,22 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.zoom-icon {
+/* Overlay dorado que aparece al pasar el mouse */
+.zoom-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  font-size: 2rem;
-  color: var(--color-gold-soft);
-  pointer-events: none;
-  transition: transform 0.3s ease;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(201,169,110,0.2); /* dorado suave */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.img-wrapper:hover .zoom-icon {
-  transform: translate(-50%, -50%) scale(1);
+.img-wrapper:hover .zoom-overlay {
+  opacity: 1;
 }
+
 
 .contact{text-align:center;}
 .contact strong{color:var(--color-gold);font-size:1.2rem;}
@@ -385,6 +387,8 @@ section:hover h2::after{width:80px;}
   <div class="container">
     <h2>Momentos que Visten Historia</h2>
     <p>Explora nuestra galería y descubre trajes que cuentan historias. Cada imagen refleja elegancia, precisión y un cuidado excepcional en cada detalle.</p>
+   
+    <p></p>
     
     <div class="swiper">
   <div class="swiper-wrapper">
@@ -393,24 +397,28 @@ section:hover h2::after{width:80px;}
            alt="Traje Clásico Elegante" 
            data-info="Traje de lana merino, corte slim, con solapas finas y botones artesanales dorados. Un clásico que nunca pasa de moda.">
        <span class="zoom-icon">🔍</span>
+      <div class="zoom-overlay"></div>
     </div>
     <div class="swiper-slide">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" 
            alt="Traje de Verano Lino" 
            data-info="Traje de lino ligero, ideal para los días de verano, con detalles meticulosos y acabado artesanal impecable.">
        <span class="zoom-icon">🔍</span>
+      <div class="zoom-overlay"></div>
     </div>
     <div class="swiper-slide">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true" 
            alt="Traje Sotisficado" 
            data-info="Traje elegante con forro exclusivo y costura a mano. Perfecto para eventos que exigen estilo y distinción.">
        <span class="zoom-icon">🔍</span>
+      <div class="zoom-overlay"></div>
     </div>
     <div class="swiper-slide">
       <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" 
            alt="Traje de Novio Premium" 
            data-info="Traje de novio a medida, corte clásico con detalles finos y tela premium. Ideal para un día inolvidable.">
        <span class="zoom-icon">🔍</span>
+      <div class="zoom-overlay"></div>
     </div>
     <!-- Agrega más slides aquí sin problema -->
   </div>
