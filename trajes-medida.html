@@ -162,7 +162,9 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
   background: rgba(201,169,110,0.2); /* dorado suave */
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none; /* <- esto permite click en la img */
 }
+
 
 .img-wrapper:hover .zoom-overlay {
   opacity: 1;
