@@ -88,16 +88,20 @@ footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.
   opacity:0;pointer-events:none;transform:translateY(20px);
 }
 .whatsapp-btn:hover{
-  transform:translateY(-5px) scale(1.1);box-shadow:0 15px 35px rgba(0,0,0,0.4);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 .whatsapp-btn svg.whatsapp-icon {
   width: 50%;
   height: 50%;
-  fill: white; /* blanco sobre el círculo verde */
-  display: block;
+  fill: white; /* el icono será blanco sobre el círculo verde */
 }
 
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+@keyframes pulse{
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
 @media(max-width:768px){.nav-links{display:none;}}
 h2{position:relative;display:inline-block;padding-bottom:15px;}
 h2::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--color-gold);transition:0.6s ease;}
@@ -226,12 +230,11 @@ section:hover h2::after{width:80px;}
     <p>Listos para crear algo que sea completamente tuyo. Contáctanos vía WhatsApp o teléfono y da el primer paso hacia tu traje a medida, diseñado solo para ti.</p>
     <p><strong>+56 9 8888 6666</strong></p>
     <p>Santiago, Chile</p>
-   <a href="https://wa.me/569XXXXXXXX" class="whatsapp-btn" target="_blank">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="whatsapp-icon">
-      <path d="M16 3C9.373 3 4 8.373 4 15c0 2.65.874 5.1 2.33 7.01L4 29l6.11-2.42a12.918 12.918 0 0 0 7.89 2.41c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.57 12.26c-.21-.11-1.24-.61-1.43-.68-.19-.07-.33-.1-.47.1-.14.19-.54.61-.66.74-.12.13-.24.15-.44.05-.21-.11-.9-.34-1.71-1.09-.63-.57-1.06-1.27-1.18-1.48-.12-.21-.01-.32.09-.43.09-.09.21-.24.32-.36.11-.12.14-.19.21-.32.07-.13.03-.24-.02-.34-.06-.1-.44-1.1-.6-1.5-.15-.39-.31-.34-.43-.34-.11 0-.28.04-.43.21-.15.17-.57.58-.57 1.42 0 .84.61 1.64.7 1.75.1.11 1.2 1.77 2.9 2.48.41.18.73.28.98.36.41.13.78.11 1.07.06.33-.05 1.02-.42 1.16-.83.14-.41.14-.76.1-.83-.04-.07-.15-.11-.28-.19z"/>
-    </svg>
-  </a>
-
+  <a href="https://wa.me/569XXXXXXXX" class="whatsapp-btn" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="whatsapp-icon">
+        <path d="M380.9 97.1C339-7.7 217.8-10.1 145.3 62.4c-72.5 72.5-69.7 193.7 2.9 246.7L32 480l172.9-116.2c52.9 72.6 174.1 75.4 246.6 2.9 72.5-72.5 69.7-193.7-2.5-246.2zM304 288c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm-48-48c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z"/>
+      </svg>
+    </a>
 
   </div>
 </section>
