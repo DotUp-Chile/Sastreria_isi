@@ -76,10 +76,16 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.swiper-slide img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+.swiper-slide img:hover::after {
+  content: "🔍";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: var(--color-gold-soft);
 }
+
 .custom-prev,
 .custom-next {
   width: 50px;
