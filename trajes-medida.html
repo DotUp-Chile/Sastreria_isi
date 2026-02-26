@@ -62,32 +62,23 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
 .card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.4);border:1px solid rgba(201,169,110,0.4);}
 .card h3{margin-bottom:0.5rem;}
 /* Galería mejorada */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px; /* más espacio entre imágenes */
-  margin-top: 2rem;
+.swiper {
+  padding: 2rem 0;
 }
 
-.gallery img {
+.swiper-slide img {
   width: 100%;
   height: 350px;
   object-fit: cover;
-  border-radius: 12px; /* esquinas redondeadas */
+  border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  cursor: pointer;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.gallery img:hover {
-  transform: scale(1.08);
+.swiper-slide img:hover {
+  transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-/* Espacio entre el texto y la galería */
-#galeria p {
-  margin-bottom: 1.5rem; /* separa el texto de las fotos */
-  color: var(--color-gray);
-  line-height: 1.8;
 }
 
 .contact{text-align:center;}
@@ -230,8 +221,10 @@ section:hover h2::after{width:80px;}
   .modal-body img {max-width: 100%;}
 }
 
-  
 </style>
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 </head>
 <body>
 
@@ -308,13 +301,35 @@ section:hover h2::after{width:80px;}
     <h2>Momentos que Visten Historia</h2>
     <p>Explora nuestra galería y descubre trajes que cuentan historias. Cada imagen refleja elegancia, precisión y un cuidado excepcional en cada detalle.</p>
     
-    <div class="gallery">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true" alt="Traje 1" data-info="Traje clásico de lana merino, corte slim, detalles en solapa dorada.">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" alt="Traje 2" data-info="Traje de lino fresco, ideal verano, acabado artesanal y botones personalizados.">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true" alt="Traje 3" data-info="Traje elegante con forro exclusivo, costura a mano y estilo sofisticado para eventos.">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" alt="Traje 4" data-info="Traje de novio a medida, corte clásico con detalles finos y tela premium.">
+    <div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true" 
+           alt="Traje 1" 
+           data-info="Traje clásico de lana merino, corte slim, detalles en solapa dorada.">
     </div>
+    <div class="swiper-slide">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true" 
+           alt="Traje 2" 
+           data-info="Traje de lino fresco, ideal verano, acabado artesanal y botones personalizados.">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true" 
+           alt="Traje 3" 
+           data-info="Traje elegante con forro exclusivo, costura a mano y estilo sofisticado para eventos.">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" 
+           alt="Traje 4" 
+           data-info="Traje de novio a medida, corte clásico con detalles finos y tela premium.">
+    </div>
+    <!-- Agrega más slides aquí sin problema -->
   </div>
+  <!-- Botones de navegación -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
 
 <!-- Modal -->
   <div id="gallery-modal" class="modal hidden">
@@ -421,6 +436,23 @@ modal.addEventListener('click', e => {
   }
 });
 
+</script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    640: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  },
+});
 </script>
 
 <footer>© 2026 Sastrería Dot.Up</footer>
