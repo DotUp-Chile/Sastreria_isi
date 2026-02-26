@@ -65,6 +65,10 @@ section::before{content:"";position:absolute;top:0;left:50%;transform:translateX
 .swiper {
   padding: 2rem 0;
 }
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: none; /* quita el icono predeterminado */
+}
 
 .swiper-slide img {
   width: 100%;
