@@ -406,7 +406,7 @@ window.addEventListener("scroll", () => {
 </section>
 
   <script>
-  const galleryImgs = document.querySelectorAll('.gallery img');
+  const galleryImgs = document.querySelectorAll('.swiper-slide img');
   const modal = document.getElementById('gallery-modal');
   const modalImg = document.getElementById('modal-img');
   const modalTitle = document.getElementById('modal-title');
@@ -424,6 +424,7 @@ galleryImgs.forEach(img => {
   });
 });
 
+// Cerrar modal con la X
 modalClose.addEventListener('click', () => {
   modal.classList.remove('show');
   modal.classList.add('hidden');
