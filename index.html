@@ -677,8 +677,17 @@ transform:translateY(0);
 .nav-links li {
   position: relative;
 }
-
-
+.nav-links .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--color-dark-2); list-style: none; padding: 10px 0; min-width: 200px; border-radius: 6px; z-index: 1000; 
+                          }
+.nav-links .dropdown-menu li { margin: 0; 
+                                } 
+.nav-links .dropdown-menu li a { display: block; padding: 10px 20px; color: var(--color-white); font-size: 0.9rem; opacity: 0.85; 
+                                  }
+.nav-links .dropdown-menu li a:hover { background: rgba(201,169,110,0.2); color: var(--color-gold); 
+                                        }
+.nav-links .dropdown:hover .dropdown-menu 
+   { display: block;
+}
    
 /* Contenedor general de los servicios */
 .services-grid {
@@ -721,18 +730,18 @@ transform:translateY(0);
 </div>
 
 
-<ul class="nav-links">
-  <li><a href="trajes-medida.html">Trajes a Medida</a></li>
-  <li><a href="ajustes.html">Ajustes y Hanchura</a></li>
-  <li><a href="trajes-novio.html">Trajes de Novio</a></li>
-  <li><a href="#proceso">Proceso</a></li>
-  <li><a href="#galeria">Galería</a></li>
-  <li><a href="#contacto">Contacto</a></li>
-</ul>
-  </li>
-  <li><a href="#proceso">Proceso</a></li>
-  <li><a href="#galeria">Galería</a></li>
-  <li><a href="#contacto">Contacto</a></li>
+<ul class="nav-links"> 
+   <li class="dropdown"> 
+      <a href="#">Servicios </a> 
+      <ul class="dropdown-menu"> 
+         <li><a href="trajes-medida.html">Trajes a Medida</a></li> 
+         <li><a href="ajustes.html">Ajustes y Hanchura</a></li> 
+         <li><a href="trajes-novio.html">Trajes de Novio</a></li>
+      </ul> 
+   </li> 
+   <li><a href="#proceso">Proceso</a></li> 
+   <li><a href="#galeria">Galería</a></li> 
+   <li><a href="#contacto">Contacto</a></li> 
 </ul>
 
 </div>
