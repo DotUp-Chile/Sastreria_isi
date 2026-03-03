@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trajes de Novio | Dot Up Web Studio</title>
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Trajes de novio elegantes y personalizados para tu gran día en Santiago.">
+<title>Trajes de Novio | Sastrería Dot.Up</title>
+<meta name="description" content="Trajes de novio elegantes y personalizados para tu gran día en Santiago. Ajuste perfecto, telas premium y asesoría profesional.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 <style>
-
-/* =========================
-   VARIABLES PROFESIONALES
-========================= */
-
 :root{
 --color-dark:#141414;
 --color-dark-2:#0e0e0e;
@@ -25,469 +24,165 @@
 --color-gray:#a0a0a0;
 --container:1200px;
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--color-dark);color:var(--color-white);overflow-x:hidden;}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;letter-spacing:0.5px;}
+h1{font-size:clamp(2.5rem,5vw,4rem);}
+h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:2rem;text-align:center;}
+p{line-height:1.8;color:var(--color-gray);}
+.container{max-width:var(--container);margin:auto;padding:0 2rem;}
 
-/* =========================
-RESET
-========================= */
+header{position:fixed;top:0;width:100%;z-index:1000;background:transparent;transition:0.4s ease;}
+header.scrolled{background:rgba(0,0,0,0.85);}
+.nav{display:flex;justify-content:space-between;align-items:center;height:70px;}
+.logo img{height:65px;width:auto;display:block;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;color:white;font-size:0.95rem;opacity:0.85;position:relative;}
+.nav-links a::after{content:"";position:absolute;bottom:-6px;left:0;width:0%;height:1px;background:var(--color-gold);transition:0.3s;}
+.nav-links a:hover::after{width:100%;}
+@media(max-width:768px){.nav-links{display:none;}}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* HERO (con imagen de fondo tipo cinematográfico) */
+.hero{
+  position:relative;
+  height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)),
+    url("https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true");
+  background-size:cover;
+  background-position:center;
 }
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background: rgba(0,0,0,0.20);z-index:-1;}
+.hero-content{max-width:820px;position:relative;z-index:1;color:var(--color-white);}
+.hero-content span{color:var(--color-gold);letter-spacing:3px;font-size:0.85rem;text-transform:uppercase;}
+.hero-content h1{margin-top:20px;}
+.hero-content p{margin:1.5rem 0;font-size:1.1rem;color:rgba(255,255,255,0.82);}
 
-html{
-scroll-behavior:smooth;
+.hero-content span,.hero-content h1,.hero-content p,.hero-content .btn{
+  opacity:0;transform:translateY(40px);animation:fadeUp 1s ease forwards;
 }
+.hero-content span{animation-delay:0.3s;}
+.hero-content h1{animation-delay:0.6s;}
+.hero-content p{animation-delay:0.9s;}
+.hero-content .btn{animation-delay:1.2s;}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
-body{
-font-family:'Inter',sans-serif;
-background:var(--color-dark);
-color:var(--color-white);
-overflow-x:hidden;
-}
-
-/* =========================
-TIPOGRAFÍA
-========================= */
-
-h1,h2,h3{
-font-family:'Playfair Display',serif;
-font-weight:600;
-letter-spacing:0.5px;
-}
-
-h1{
-font-size:clamp(2.5rem,5vw,4rem);
-}
-
-h2{
-font-size:clamp(2rem,4vw,2.8rem);
-margin-bottom:2rem;
-text-align:center;
-}
-
-p{
-line-height:1.8;
-color:var(--color-gray);
-}
-
-/* =========================
-CONTAINER
-========================= */
-
-.container{
-max-width:var(--container);
-margin:auto;
-padding:0 2rem;
-}
-
-/* =========================
-HEADER PREMIUM
-========================= */
-
-header{
-position:fixed;
-top:0;
-width:100%;
-z-index:1000;
-background:transparent;
-transition:0.4s ease;
-}
-
-header.scrolled{
-background:rgba(0,0,0,0.85);
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-height:70px;
-}
-
-.logo img{
-  height:65px; /* ajusta según tu gusto */
-  width:auto;
-  display:block;
-}
-
-.nav-links{
-display:flex;
-gap:2rem;
-list-style:none;
-}
-
-.nav-links a{
-text-decoration:none;
-color:white;
-font-size:0.95rem;
-opacity:0.85;
-position:relative;
-}
-
-.nav-links a::after{
-content:"";
-position:absolute;
-bottom:-6px;
-left:0;
-width:0%;
-height:1px;
-background:var(--color-gold);
-transition:0.3s;
-}
-
-.nav-links a:hover::after{
-width:100%;
-}
-
-/* =========================
-HERO CINEMÁTICO
-========================= */
-
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-   
-.hero-overlay {
-  position: absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.35);
-  z-index: -1;
-}
-   
-@keyframes heroZoom {
-0%{ background-size:110%; }
-100%{ background-size:100%; }
-}
-
-.hero-content {
-  max-width: 800px;
-  position: relative;
-  z-index: 1;
-  color: var(--color-white);
-}
-   
-.hero-content span {
-  color: var(--color-gold);
-  letter-spacing: 3px;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-}
-
-.hero-content h1{
-margin-top:20px;
-}
-
-.hero-content p{
-margin:1.5rem 0;
-font-size:1.1rem;
-}
-
-/* FadeUp */
-
-.hero-content span,
-.hero-content h1,
-.hero-content p,
-.hero-content .btn {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease forwards;
-}
-
-.hero-content span { animation-delay: 0.3s; }
-.hero-content h1 { animation-delay: 0.6s; }
-.hero-content p { animation-delay: 0.9s; }
-.hero-content .btn { animation-delay: 1.2s; }
-   
-@keyframes fadeUp {
-  to {
-    opacity:1;
-    transform: translateY(0);
-  }
-}
-/*______________*/
-.scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  height: 40px;
-  border: 2px solid var(--color-gold);
-  border-radius: 12px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 4px;
-  box-shadow: 0 0 10px rgba(201,169,110,0.5);
-  animation: pulseArrow 2s infinite;
-  cursor: pointer;
-  text-decoration: none; /* para que no se vea subrayado */
-}
-
-.scroll-down span {
-  display: block;
-  width: 4px;
-  height: 4px;
-  background: var(--color-gold);
-  margin: 6px auto;
-  border-radius: 50%;
-  animation: scroll 1.5s infinite;
-}
-
-@keyframes pulseArrow {
-  0%,100% { box-shadow: 0 0 10px rgba(201,169,110,0.5); }
-  50% { box-shadow: 0 0 20px rgba(201,169,110,0.9); }
-}
-@keyframes scroll {
-  0% { transform: translateY(0); opacity:1; }
-  50% { transform: translateY(10px); opacity:0.5; }
-  100% { transform: translateY(0); opacity:1; }
-}
-html {
-  scroll-behavior: smooth;
-}
-
-   
-/* =========================
-BOTÓN PREMIUM
-========================= */
-
+/* BOTÓN */
 .btn{
-position:relative;
-overflow:hidden;
-display:inline-block;
-background:var(--color-gold);
-color:black;
-padding:14px 34px;
-text-decoration:none;
-font-weight:600;
-letter-spacing:1px;
-transition:all 0.3s ease;
+  position:relative;overflow:hidden;display:inline-block;
+  background:var(--color-gold);color:black;
+  padding:14px 34px;text-decoration:none;font-weight:600;letter-spacing:1px;
+  transition:all 0.3s ease;
 }
-
 .btn::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.5),
-transparent
-);
-transition:0.6s;
+  content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
+  transition:0.6s;
 }
+.btn:hover::before{left:100%;}
 
-.btn:hover::before{
-left:100%;
+/* SECCIONES */
+section{padding:120px 0;position:relative;}
+section::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:90%;height:1px;background:rgba(255,255,255,0.05);}
+.section-dark{background:var(--color-dark);}
+.section-dark-2{background:var(--color-dark-2);}
+.section-light{background:var(--color-light);color:black;}
+.section-light p{color:#444;}
+
+/* LINEA DORADA */
+h2{position:relative;display:inline-block;padding-bottom:15px;}
+h2::after{
+  content:"";position:absolute;bottom:0;left:50%;
+  transform:translateX(-50%);
+  width:0;height:2px;background:var(--color-gold);transition:0.6s ease;
 }
+section:hover h2::after{width:80px;}
 
-
-/* =========================
-SECCIONES
-========================= */
-
-section{
-padding:120px 0;
-position:relative;
-}
-section::before{
-content:"";
-position:absolute;
-top:0;
-left:50%;
-transform:translateX(-50%);
-width:90%;
-height:1px;
-background:rgba(255,255,255,0.05);
-}
-
-.section-dark{ background:var(--color-dark); }
-.section-dark-2{ background:var(--color-dark-2); }
-
-.section-light{
-background:var(--color-light);
-color:black;
-}
-
-.section-light p{ color:#444; }
-
-/* =========================
-CARDS PREMIUM
-========================= */
-
-.grid{
-display:grid;
-gap:50px;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
-
-.card{
-background:rgba(255,255,255,0.03);
-backdrop-filter:blur(10px);
-padding:20px;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.4s;
-}
-
-.card img{
-width:100%;
-height:300px;
-object-fit:cover;
-margin-bottom:1rem;
-transition:0.5s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.4);
-border:1px solid rgba(201,169,110,0.4);
-}
-.card h3{
-margin-bottom:0.5rem;
-}
-
-/* =========================
-TESTIMONIOS
-========================= */
-
-.testimonials-grid{
-  display:grid;
-  gap:30px;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  margin-top:50px;
-}
-
-.testimonial-card {
-  background: rgba(201,169,110,0.05);
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid rgba(201,169,110,0.2);
-  text-align: center; /* ya lo tienes, genial */
-  display: flex; /* nuevo */
-  flex-direction: column; /* que los elementos queden en columna */
-  align-items: center; /* centra todo horizontalmente */
-  justify-content: center; /* centra verticalmente dentro de la tarjeta */
-  transition: 0.4s;
-}
-
-.testimonial-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-.testimonial-card p{
-  font-style:italic;
-  color:#333;
-  margin-bottom:15px;
-}
-
-.testimonial-info {
-  display: flex;
-  flex-direction: column; /* en columna, para que la img quede encima del nombre */
-  align-items: center; /* centra horizontalmente la imagen y el nombre */
-  gap: 10px;
-  margin-bottom: 15px; /* separa del texto */
-}
-
-.testimonial-info img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-}
-
-   
-/* =========================
-PROCESO
-========================= */
-
+/* PROCESO */
 .process-grid{
-display:grid;
-gap:40px;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-text-align:center;
+  display:grid;
+  gap:40px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  text-align:center;
 }
-
 .process-number{
-font-size:2.5rem;
-color:var(--color-gold);
-margin-bottom:10px;
+  font-size:2.5rem;
+  color:var(--color-gold);
+  margin-bottom:10px;
 }
 
-/* =========================
-GALERÍA
-========================= */
+/* SWIPER + cards */
+.swiper{padding:2rem 0;}
+.img-wrapper{position:relative;border-radius:12px;overflow:hidden;}
+.img-wrapper img{
+  width:100%;height:350px;object-fit:cover;
+  transition:transform 0.5s ease, box-shadow 0.5s ease;
+  cursor:pointer;
+}
+.img-wrapper:hover img{transform:scale(1.05);box-shadow:0 20px 40px rgba(0,0,0,0.5);}
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:15px;
+.zoom-overlay{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background:rgba(201,169,110,0.2);
+  opacity:0;transition:opacity 0.3s ease;
+  pointer-events:none;
+}
+.img-wrapper:hover .zoom-overlay{opacity:1;}
+
+.custom-prev,.custom-next{
+  width:50px;height:50px;
+  background:rgba(0,0,0,0.5);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  position:absolute;top:50%;
+  transform:translateY(-50%);
+  z-index:10;cursor:pointer;
+  transition:background 0.3s ease, transform 0.3s ease;
+}
+.custom-prev{left:10px;}
+.custom-next{right:10px;}
+.custom-prev:hover,.custom-next:hover{background:rgba(0,0,0,0.8);transform:translateY(-50%) scale(1.1);}
+.swiper-button-next::after,.swiper-button-prev::after{display:none!important;content:none!important;}
+.custom-prev svg path,.custom-next svg path{stroke:#c9a96e!important;}
+
+/* MODAL */
+.modal.hidden{opacity:0;pointer-events:none;}
+.modal{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.85);
+  display:flex;justify-content:center;align-items:center;
+  z-index:2000;opacity:0;pointer-events:none;
+  transition:opacity 0.3s ease;
+}
+.modal.show{opacity:1;pointer-events:all;}
+.modal-content{
+  background:var(--color-dark-2);
+  padding:20px;border-radius:12px;
+  max-width:900px;width:90%;
+}
+.modal-body{display:flex;flex-wrap:wrap;gap:20px;align-items:center;}
+.modal-body img{max-width:420px;width:100%;border-radius:12px;object-fit:cover;}
+.modal-text{flex:1;color:var(--color-white);}
+.modal-text h3{color:var(--color-gold);margin-bottom:1rem;}
+.modal-text p{line-height:1.6;color:rgba(255,255,255,0.85);}
+.modal-close{position:absolute;top:20px;right:30px;font-size:2rem;color:var(--color-gold);cursor:pointer;}
+@media(max-width:768px){
+  .modal-body{flex-direction:column;}
+  .modal-body img{max-width:100%;}
 }
 
-.gallery img{
-width:100%;
-height:350px;
-object-fit:cover;
-transition:0.5s;
-}
+/* CONTACTO */
+.contact{text-align:center;}
+.contact strong{color:var(--color-gold);font-size:1.2rem;}
 
-.gallery img:hover{
-transform:scale(1.08);
-}
-
-/* =========================
-CONTACTO
-========================= */
-
-.contact{
-text-align:center;
-}
-
-.contact strong{
-color:var(--color-gold);
-font-size:1.2rem;
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer{
-padding:50px 0;
-background:black;
-text-align:center;
-color:#777;
-font-size:0.9rem;
-}
-
-/* =========================
-WHATSAPP
-========================= */
+/* WHATSAPP */
 .whatsapp-btn{
   position: fixed !important;
   bottom: 30px;
@@ -495,273 +190,259 @@ WHATSAPP
   background: #25D366;
   width: 65px;
   height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  transition: all 0.3s ease;
-  z-index: 99999 !important; /* 👈 clave */
-  animation: pulse 2.5s infinite;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transition:all 0.3s ease;
+  z-index:99999 !important;
+  animation:pulse 2.5s infinite;
 }
-
-.whatsapp-btn.hidden{
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(20px);
-}
-.whatsapp-btn:hover{
-transform:translateY(-5px) scale(1.1);
-box-shadow:0 15px 35px rgba(0,0,0,0.4);
-}
-   
+.whatsapp-btn.hidden{opacity:0;pointer-events:none;transform:translateY(20px);}
+.whatsapp-btn:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 15px 35px rgba(0,0,0,0.4);}
 @keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
-}
-   
-/* =========================
-RESPONSIVE
-========================= */
-
-@media(max-width:768px){
-.nav-links{ display:none; }
-}
-/* ===== LINEA DORADA ===== */
-h2{
-position:relative;
-display:inline-block;
-padding-bottom:15px;
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+  70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-h2::after{
-content:"";
-position:absolute;
-bottom:0;
-left:50%;
-transform:translateX(-50%);
-width:0;
-height:2px;
-background:var(--color-gold);
-transition:0.6s ease;
-}
-
-section:hover h2::after{
-width:80px;
-}
-/*_____________*/
-.reveal{
-opacity:0;
-transform:translateY(60px);
-transition:all 0.8s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-.carousel {
-  position: relative;
-  overflow: hidden;
-  margin-top: 40px;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  min-width: 280px;
-  margin-right: 15px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  transition: transform 1s ease; /* más lento y cinematográfico */
-}
-
-.carousel-item:hover img {
-  transform: scale(1.1);
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  /* Fondo */
-  background: rgba(0,0,0,0.35);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-/* TEXTO */
-.overlay span {
-  color: #c9a96e;
-  font-size: 1.05rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.6s ease 0.15s,
-              transform 0.6s ease 0.15s;
-}
-
-/* Línea dorada */
-.overlay::after {
-  content: "";
-  width: 40px;
-  height: 1px;
-  background: #c9a96e;
-  margin-top: 8px;
-
-  opacity: 0;
-  transition: opacity 0.6s ease 0.2s;
-}
-
-   
-/* Hover */
-.carousel-item:hover .overlay {
-  opacity: 1;
-}
-
-.carousel-item:hover .overlay span {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.carousel-item:hover .overlay::after {
-  opacity: 1;
-}
-/* Botones */
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(201,169,110,0.8);
-  border: none;
-  padding: 10px 15px;
-  color: black;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  transition: 0.3s;
-}
-
-.carousel button:hover {
-  background: var(--color-gold);
-}
-
-.carousel .prev { left: 10px; }
-.carousel .next { right: 10px; }
-   
-/* ===== MENU DESPLEGABLE ===== */
-.nav-links li {
-  position: relative;
-}
-
-.nav-links .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--color-dark-2);
-  list-style: none;
-  padding: 10px 0;
-  min-width: 200px;
-  border-radius: 6px;
-  z-index: 1000;
-}
-
-.nav-links .dropdown-menu li {
-  margin: 0;
-}
-
-.nav-links .dropdown-menu li a {
-  display: block;
-  padding: 10px 20px;
-  color: var(--color-white);
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-.nav-links .dropdown-menu li a:hover {
-  background: rgba(201,169,110,0.2);
-  color: var(--color-gold);
-}
-
-.nav-links .dropdown:hover .dropdown-menu {
-  display: block;
-}
-
+/* FOOTER */
+footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="container nav">
-  <div class="logo">
-    <a href="index.html">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/cropped-cropped-logo-ibarra-360x120-1-200x67.png?raw=true" />
-    </a>
+  <div class="container nav">
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/cropped-cropped-logo-ibarra-360x120-1-200x67.png?raw=true" alt="Logo">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#detalles">Detalles</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
   </div>
-  <ul class="nav-links">
-    <li><a href="index.html#servicios">Servicios</a></li>
-    <li><a href="index.html#proceso">Proceso</a></li>
-    <li><a href="index.html#galeria">Galería</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
-  </ul>
-</div>
 </header>
 
-<section class="hero" style="height:60vh;">
-  <div class="hero-overlay"></div>
+<section id="hero" class="hero">
   <div class="hero-content">
     <span>Trajes de Novio</span>
     <h1>Elegancia y Estilo para tu Gran Día</h1>
-    <p>Trajes personalizados para novios, confeccionados con telas de alta calidad y ajuste perfecto.</p>
-    <a href="index.html#contacto" class="btn">Agendar cita</a>
+    <p>Un traje de novio no se elige al azar: se diseña para ti. Calce perfecto, telas premium y detalles que elevan tu presencia.</p>
+    <a href="#detalles" class="btn">Descubre tu traje</a>
   </div>
 </section>
 
-<section class="section-light">
+<section id="detalles" class="section-light">
   <div class="container">
-    <h2>Detalles del Servicio</h2>
-    <p>Creamos trajes de novio únicos, cuidando cada detalle para que luzcas impecable en tu boda.</p>
-    <div class="gallery">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true" alt="Trajes de Novio 1">
-      <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true" alt="Trajes de Novio 2">
+    <h2>Tu Traje, Tu Momento</h2>
+    <p>En tu boda, todo habla de ti. Por eso diseñamos tu traje de novio pensando en tu estilo, tu postura y la elegancia que quieres proyectar. Desde la tela y el corte, hasta los detalles más finos, cuidamos cada etapa para que te sientas cómodo y seguro durante todo el día.</p>
+    <p>Te guiamos con asesoría personalizada para elegir un estilo clásico, moderno o sofisticado, logrando un calce impecable que se vea perfecto desde cualquier ángulo (sí, incluso en fotos y video 😌).</p>
+  </div>
+</section>
+
+<section id="proceso" class="section-dark-2">
+  <div class="container">
+    <h2>Proceso de Confección</h2>
+    <div class="process-grid">
+      <div>
+        <div class="process-number">1</div>
+        <h3>Asesoría</h3>
+        <p>Definimos estilo, ceremonia, colores y detalles.</p>
+      </div>
+      <div>
+        <div class="process-number">2</div>
+        <h3>Medidas</h3>
+        <p>Toma precisa para lograr el calce perfecto.</p>
+      </div>
+      <div>
+        <div class="process-number">3</div>
+        <h3>Confección</h3>
+        <p>Trabajo detallado con terminaciones premium.</p>
+      </div>
+      <div>
+        <div class="process-number">4</div>
+        <h3>Prueba final</h3>
+        <p>Ajustes finales para que quede impecable.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section-dark">
-  <div class="container contact">
-    <h2>Contacto</h2>
-    <p>Agenda tu cita vía WhatsApp o teléfono.</p>
-    <p><strong>+56 9 8716 2400</strong></p>
-    <p>Santiago, Chile</p>
-    <a href="https://api.whatsapp.com/send/?phone=56987162400&text=Hola+%2ASastreria+Ibarra+-+Trajes+a+la+medida%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Sastreria+Ibarra+%E2%80%93+Trajes+a+la+medida+https%3A%2F%2Fsastreriaibarra.cl%2F&type=phone_number&app_absent=0" 
-       class="whatsapp-btn" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
-        <path d="M16.001 3C8.82 3 3 8.821 3 16.002c0 2.823.922 5.426 2.48 7.53L3 29l5.623-2.412a12.93 12.93 0 0 0 7.378 2.314h.001c7.18 0 13-5.82 13-13S23.181 3 16.001 3zm0 23.904a10.87 10.87 0 0 1-5.54-1.51l-.397-.236-3.336 1.43.712-3.456-.258-.356a10.865 10.865 0 1 1 8.82 4.128zm5.957-8.157c-.326-.163-1.926-.951-2.225-1.06-.299-.109-.517-.163-.735.164-.217.326-.843 1.06-1.034 1.277-.19.217-.381.245-.707.082-.326-.163-1.377-.508-2.623-1.62-.969-.864-1.623-1.932-1.814-2.258-.19-.326-.02-.502.143-.665.146-.146.326-.381.49-.571.163-.19.217-.326.326-.544.109-.217.054-.408-.027-.571-.082-.163-.735-1.773-1.007-2.427-.265-.637-.535-.551-.735-.561l-.626-.011c-.217 0-.571.082-.87.408-.299.326-1.143 1.117-1.143 2.726 0 1.609 1.17 3.164 1.334 3.381.163.217 2.304 3.52 5.584 4.935.781.337 1.39.538 1.865.689.783.249 1.496.214 2.06.13.629-.094 1.926-.787 2.197-1.547.272-.76.272-1.411.19-1.547-.081-.136-.299-.217-.625-.381z"/>
+<section id="galeria" class="section-dark">
+  <div class="container">
+    <h2>Galería</h2>
+    <p>Explora estilos pensados para novios: elegante, moderno o clásico. Haz clic en una foto para ver los detalles.</p>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="img-wrapper">
+            <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/novio.jpeg?raw=true"
+                 alt="Novio Premium"
+                 data-info="Traje de novio a medida, corte clásico con detalles finos y tela premium. Ideal para un día inolvidable.">
+            <div class="zoom-overlay"></div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="img-wrapper">
+            <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria3.jpeg?raw=true"
+                 alt="Estilo Sofisticado"
+                 data-info="Traje elegante con forro exclusivo y costura a mano. Perfecto para ceremonias con estilo y distinción.">
+            <div class="zoom-overlay"></div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="img-wrapper">
+            <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria1.jpeg?raw=true"
+                 alt="Clásico Atemporal"
+                 data-info="Corte limpio y elegante, ideal para un look tradicional. Terminaciones finas y calce impecable.">
+            <div class="zoom-overlay"></div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="img-wrapper">
+            <img src="https://github.com/DotUp-Chile/Sastreria_isi/blob/main/galeria2.jpeg?raw=true"
+                 alt="Look Ligero"
+                 data-info="Estilo ideal para celebraciones de día. Comodidad, frescura y elegancia en cada detalle.">
+            <div class="zoom-overlay"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="swiper-button-prev custom-prev">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18l-6-6 6-6" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-    </a>
+    </div>
+    <div class="swiper-button-next custom-next">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M9 6l6 6-6 6" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Modal -->
+    <div id="gallery-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body">
+          <img id="modal-img" src="" alt="Traje grande">
+          <div class="modal-text">
+            <h3 id="modal-title"></h3>
+            <p id="modal-info"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
-   
+
+<section id="contacto" class="section-light">
+  <div class="container contact">
+    <h2>Hablemos por WhatsApp</h2>
+    <p>Agenda tu cita y te ayudamos a definir el estilo perfecto para tu boda.</p>
+    <p><strong>+56 9 8716 2400</strong></p>
+    <p>Santiago, Chile</p>
+  </div>
+</section>
+
 <footer>© 2026 Sastrería Dot.Up</footer>
+
+<!-- Botón WhatsApp fijo -->
+<a href="https://api.whatsapp.com/send/?phone=56987162400&text=Hola+%2ASastreria+Ibarra+-+Trajes+de+Novio%2A.+Quiero+agendar+una+cita+para+ver+opciones+de+traje+de+novio.&type=phone_number&app_absent=0"
+   class="whatsapp-btn hidden"
+   target="_blank"
+   aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
+    <path d="M16.001 3C8.82 3 3 8.821 3 16.002c0 2.823.922 5.426 2.48 7.53L3 29l5.623-2.412a12.93 12.93 0 0 0 7.378 2.314h.001c7.18 0 13-5.82 13-13S23.181 3 16.001 3zm0 23.904a10.87 10.87 0 0 1-5.54-1.51l-.397-.236-3.336 1.43.712-3.456-.258-.356a10.865 10.865 0 1 1 8.82 4.128zm5.957-8.157c-.326-.163-1.926-.951-2.225-1.06-.299-.109-.517-.163-.735.164-.217.326-.843 1.06-1.034 1.277-.19.217-.381.245-.707.082-.326-.163-1.377-.508-2.623-1.62-.969-.864-1.623-1.932-1.814-2.258-.19-.326-.02-.502.143-.665.146-.146.326-.381.49-.571.163-.19.217-.326.326-.544.109-.217.054-.408-.027-.571-.082-.163-.735-1.773-1.007-2.427-.265-.637-.535-.551-.735-.561l-.626-.011c-.217 0-.571.082-.87.408-.299.326-1.143 1.117-1.143 2.726 0 1.609 1.17 3.164 1.334 3.381.163.217 2.304 3.52 5.584 4.935.781.337 1.39.538 1.865.689.783.249 1.496.214 2.06.13.629-.094 1.926-.787 2.197-1.547.272-.76.272-1.411.19-1.547-.081-.136-.299-.217-.625-.381z"/>
+  </svg>
+</a>
+
+<script>
+/* Header scrolled */
+window.addEventListener("scroll", function(){
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+<script>
+/* Mostrar WhatsApp después del hero */
+const hero = document.getElementById("hero");
+const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+window.addEventListener("scroll", () => {
+  const heroHeight = hero ? hero.offsetHeight : 0;
+  if(window.scrollY > heroHeight - 50){
+    whatsappBtn.classList.remove("hidden");
+  } else {
+    whatsappBtn.classList.add("hidden");
+  }
+});
+</script>
+
+<script>
+/* Modal galería */
+const galleryImgs = document.querySelectorAll('.swiper-slide img');
+const modal = document.getElementById('gallery-modal');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalInfo = document.getElementById('modal-info');
+const modalClose = document.querySelector('.modal-close');
+
+galleryImgs.forEach(img => {
+  img.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('show');
+    modalImg.src = img.src;
+    modalTitle.textContent = img.alt;
+    modalInfo.textContent = img.dataset.info;
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('show');
+  modal.classList.add('hidden');
+});
+
+modal.addEventListener('click', e => {
+  if(e.target === modal){
+    modal.classList.remove('show');
+    modal.classList.add('hidden');
+  }
+});
+</script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 3,
+  spaceBetween: 25,
+  navigation: {
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
+  },
+  loop: true,
+  breakpoints: {
+    320: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  },
+});
+</script>
+
 </body>
 </html>
