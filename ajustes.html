@@ -470,16 +470,16 @@ GALERÍA
 
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
   margin-top:50px;
 }
 
 .gallery img{
   width:100%;
-  aspect-ratio: 3/4;   /* más estilizado */
-  object-fit:cover;
+  height:auto;
   border-radius:10px;
+  transition:0.5s;
 }
 
 .gallery img:hover{
