@@ -490,27 +490,27 @@ WHATSAPP
 ========================= */
 
 .whatsapp-btn{
-position:fixed;
-bottom:30px;
-right:30px;
-background:#25D366;
-width:65px;
-height:65px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-transition:all 0.3s ease;
-z-index:999;
-animation:pulse 2.5s infinite;
-}
-.whatsapp-btn.hidden{
-opacity:0;
-pointer-events:none;
-transform:translateY(20px);
+  position: fixed !important;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  z-index: 99999 !important; /* 👈 clave */
+  animation: pulse 2.5s infinite;
 }
 
+.whatsapp-btn.hidden{
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
 
 .whatsapp-btn:hover{
 transform:translateY(-5px) scale(1.1);
