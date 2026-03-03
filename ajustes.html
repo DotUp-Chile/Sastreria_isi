@@ -484,7 +484,38 @@ transition:0.5s;
 .gallery img:hover{
 transform:scale(1.08);
 }
+   
+/* SECCIÓN TESTIMONIOS FONDO NEGRO */
+.testimonios-dark {
+    background-color: #000;
+    padding: 100px 0;
+}
 
+/* Título blanco */
+.testimonios-dark h2 {
+    color: #ffffff;
+}
+
+/* Línea dorada debajo del título (si usas ::after) */
+.testimonios-dark h2::after {
+    background-color: var(--color-gold);
+}
+
+/* Cards siguen claras para contraste elegante */
+.testimonios-dark .testimonial-card {
+    background-color: #111;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Nombre del cliente */
+.testimonios-dark .testimonial-card h3 {
+    color: #ffffff;
+}
+
+/* Texto del testimonio (mismo color que proceso) */
+.testimonios-dark .testimonial-card p {
+    color: #b8b8b8; /* igual que proceso */
+}
 /* =========================
 CONTACTO
 ========================= */
@@ -832,7 +863,7 @@ transform:translateY(0);
   </div>
 </section>
 
-<section id="testimonios" class="section-light">
+<section id="testimonios" class="testimonios-dark">
   <div class="container">
     <h2>Testimonios</h2>
 
