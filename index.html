@@ -230,6 +230,7 @@ font-size:1.1rem;
 }
 /*______________*/
 .scroll-down {
+  z-index: 5;
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -790,8 +791,6 @@ transform:translateY(0);
 <a href="#servicios" class="scroll-down">
       <span></span>
     </a>
-  </div>
-</section>
    
 <section id="servicios" class="section-dark">
 
@@ -1071,6 +1070,7 @@ prev.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', updateCarousel);
+updateCarousel();
 </script>
 
 </body>
