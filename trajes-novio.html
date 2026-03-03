@@ -178,36 +178,6 @@ section:hover h2::after{width:80px;}
   .modal-body img{max-width:100%;}
 }
 
-/* CONTACTO */
-.contact{text-align:center;}
-.contact strong{color:var(--color-gold);font-size:1.2rem;}
-
-/* WHATSAPP */
-.whatsapp-btn{
-  position: fixed !important;
-  bottom: 30px;
-  right: 30px;
-  background: #25D366;
-  width: 65px;
-  height: 65px;
-  display:flex;align-items:center;justify-content:center;
-  border-radius:50%;
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
-  transition:all 0.3s ease;
-  z-index:99999 !important;
-  animation:pulse 2.5s infinite;
-}
-.whatsapp-btn.hidden{opacity:0;pointer-events:none;transform:translateY(20px);}
-.whatsapp-btn:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 15px 35px rgba(0,0,0,0.4);}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-  70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
-  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
-}
-
-/* FOOTER */
-footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
-
 /* =========================
 TESTIMONIOS (TRAJES DE NOVIO)
 ========================= */
@@ -275,7 +245,38 @@ TESTIMONIOS (TRAJES DE NOVIO)
   font-style: italic;
   line-height: 1.7;
   margin-top: 8px;
+}  
+  
+/* CONTACTO */
+.contact{text-align:center;}
+.contact strong{color:var(--color-gold);font-size:1.2rem;}
+
+/* WHATSAPP */
+.whatsapp-btn{
+  position: fixed !important;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  width: 65px;
+  height: 65px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transition:all 0.3s ease;
+  z-index:99999 !important;
+  animation:pulse 2.5s infinite;
 }
+.whatsapp-btn.hidden{opacity:0;pointer-events:none;transform:translateY(20px);}
+.whatsapp-btn:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 15px 35px rgba(0,0,0,0.4);}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+  70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+/* FOOTER */
+footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
+
   
 </style>
 </head>
