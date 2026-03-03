@@ -207,6 +207,76 @@ section:hover h2::after{width:80px;}
 
 /* FOOTER */
 footer{padding:50px 0;background:black;text-align:center;color:#777;font-size:0.9rem;}
+
+/* =========================
+TESTIMONIOS (TRAJES DE NOVIO)
+========================= */
+
+#testimonios.section-light{
+  background: var(--color-light);
+  color: #111;
+}
+
+#testimonios .testimonials-grid{
+  display:grid;
+  gap:30px;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  margin-top:50px;
+  align-items: stretch;
+}
+
+#testimonios .testimonial-card{
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(201,169,110,0.25);
+  border-radius: 14px;
+  padding: 28px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  transition: 0.35s ease;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+}
+
+#testimonios .testimonial-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.14);
+}
+
+#testimonios .testimonial-info{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 12px;
+}
+
+#testimonios .testimonial-info img{
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 3px solid rgba(201,169,110,0.35);
+}
+
+#testimonios .testimonial-info h3{
+  margin: 0;
+  color:#111;
+}
+
+#testimonios .testimonial-info span{
+  color:#666;
+  font-size: 0.9rem;
+}
+
+#testimonios .testimonial-card p{
+  color:#333 !important;
+  font-style: italic;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+  
 </style>
 </head>
 
