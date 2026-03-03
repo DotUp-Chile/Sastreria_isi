@@ -445,17 +445,18 @@ TESTIMONIOS
 PROCESO
 ========================= */
 
-.process-grid{
-display:grid;
-gap:40px;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-text-align:center;
+.process-number {
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
-.process-number{
-font-size:2.5rem;
-color:var(--color-gold);
-margin-bottom:10px;
+.process-grid h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 600;
 }
 
 /* =========================
@@ -776,24 +777,28 @@ transform:translateY(0);
 
     <div class="process-grid">
 
-      <div class="process-step">
-        <h3>1. Evaluación de la Prenda</h3>
-        <p>Analizamos la estructura del traje o prenda para determinar qué ajustes son posibles sin comprometer su diseño original.</p>
+      <div>
+        <div class="process-number">1</div>
+        <h3>Evaluación de la Prenda</h3>
+        <p>Analizamos la prenda para determinar los ajustes precisos.</p>
       </div>
 
-      <div class="process-step">
-        <h3>2. Toma de Medidas</h3>
-        <p>Realizamos una prueba personalizada para identificar puntos clave como hombros, mangas, cintura y largo.</p>
+      <div>
+        <div class="process-number">2</div>
+        <h3>Toma de Medidas</h3>
+        <p>Tomamos medidas cuidadosamente para asegurar el mejor calce.</p>
       </div>
 
-      <div class="process-step">
-        <h3>3. Ajuste y Modificación</h3>
-        <p>Ejecutamos las modificaciones con precisión artesanal, manteniendo la proporción y caída natural de la prenda.</p>
+      <div>
+        <div class="process-number">3</div>
+        <h3>Ajuste y Modificaciones</h3>
+        <p>Realizamos las modificaciones manteniendo la estética original.</p>
       </div>
 
-      <div class="process-step">
-        <h3>4. Prueba Final</h3>
-        <p>Revisamos el resultado junto al cliente para asegurar un calce perfecto y máxima comodidad.</p>
+      <div>
+        <div class="process-number">4</div>
+        <h3>Prueba Final</h3>
+        <p>Revisamos el resultado final junto al cliente.</p>
       </div>
 
     </div>
