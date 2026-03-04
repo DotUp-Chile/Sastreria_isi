@@ -470,7 +470,8 @@ GALERÍA
 
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit, 220px); /* tamaño fijo */
+  justify-content:center; /* centra la galería */
   gap:25px;
   margin-top:50px;
 }
